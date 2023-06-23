@@ -20,13 +20,22 @@
         
         -- select members by ID
         
+        -- select all people starring in a video
+        SELECT Starring.videoID, Starring.artistID, Members.memberID, Members.alias, CONCAT(Members.lastName, " ", Members.firstName) AS fullName, Members.lastName as ln
+			FROM Starring 
+            INNER JOIN Videos ON Starring.videoID = Videos.videoID
+            INNER JOIN Members ON Starring.artistID = Members.memberID
+            WHERE Videos.videoID = :videoID
+            ORDER BY Members.lastName ASC;
+            
+        
             
 	-- UPDATE
 		UPDATE members SET koreanName = :kn, lastName = :ln, firstName = :fn, alias = :alias WHERE memberID = :memID; 
 		
 
 	-- DELETE
-		DELETE FROM NATIONS WHERE memberID = :memID;
+		DELETE FROM Members WHERE memberID = :memID;
     
 -- ----------------------------
 -- 		ALBUMS
@@ -36,6 +45,9 @@
 			VALUES	(:album, :singer, :year);
 
 	-- SELECT
+		-- select all albums 
+        
+        
 		-- select album from specific year 
         
         
@@ -52,7 +64,7 @@
 		UPDATE Albums SET albumName = :albumName, artistID = :singer, year = :year;
 
 	-- DELETE
-		DELETE FROM Albums WHERE albumID = :albumID
+		DELETE FROM Albums WHERE albumID = :albumID;
 
 -- ----------------------------
 -- 		PLATFORMS
@@ -62,12 +74,18 @@
 			VALUES	(:name, :numVid);
 
 	-- SELECT
+		-- select all platforms
 		
             
 	-- UPDATE
-		
+		-- update all parts of platform
+		UPDATE Platforms SET name = :platformName, numVideos = :num vids;
+        
+        -- update number of vids by x amnt
+        
 
 	-- DELETE
+		DELETE Platforms WHERE platformID = :platformID
 	
     
 -- ----------------------------
@@ -78,6 +96,21 @@
 			VALUES	(:vidName, :desc, :platformID, :link);
 
 	-- SELECT
+		-- select all videos
+        
+        -- select videos by platform
+        
+        -- select videos by tags (act like categories)
+        
+        -- get all categories for a specific video
+        
+        -- select all videos that contain the phrase ''
+        
+        -- select videos that contain specific members
+        
+        -- select videos from a specific platform 
+        
+        -- select five random videos for opening page
 		
             
 	-- UPDATE

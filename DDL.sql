@@ -76,8 +76,8 @@ VALUES	("김남준" , "Kim", "Namjoon", "RM"),
         ("정호석", "Jung", "HoSeok", "J-Hope"),
         ("박지민", "Park", "Jimin", "Jimin"),
         ("김태형", "Kim", "Taehyung", "V"),
-        ("전정국", "Jeon", "Jungkook", "Jungkook"),
-        ("방탄소년단", "Bangtan", "Boys", "BTS");
+        ("전정국", "Jeon", "Jungkook", "Jungkook");
+        -- ("방탄소년단", "Bangtan", "Boys", "BTS");
         
 INSERT INTO Albums (albumName, artistID, year)
 VALUES	("Mono", 1, 2018),
@@ -112,10 +112,10 @@ VALUES	(1, 1),
         (4, 5);
         
 INSERT INTO Starring (videoID, artistID)
-VALUES	( 1, 8),
+VALUES	( 1, 3),
 		( 1, 1),
         ( 1, 5),
-		( 2, 8),
+		( 2, 7),
         ( 2, 3),
         ( 2, 6),
         ( 2, 1),
