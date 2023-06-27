@@ -55,7 +55,7 @@ CREATE TABLE Platforms (
 
 CREATE TABLE Tags (
     tagID INT AUTO_INCREMENT NOT NULL,
-    name VARCHAR (45) NOT NULL,
+    tag VARCHAR (45) NOT NULL,
     PRIMARY KEY (tagID)
 );
 
@@ -73,11 +73,15 @@ INSERT INTO members(koreanName, lastName, firstName, alias)
 VALUES	("김남준" , "Kim", "Namjoon", "RM"),
 		("김석진", "Kim", "Seokjin", "Jin"),
         ("민윤기", "Min", "Yoongi", "Suga"),
-        ("정호석", "Jung", "HoSeok", "J-Hope"),
+        ("정호석", "Jung", "Hoseok", "JHope"),
         ("박지민", "Park", "Jimin", "Jimin"),
         ("김태형", "Kim", "Taehyung", "V"),
         ("전정국", "Jeon", "Jungkook", "Jungkook");
         -- ("방탄소년단", "Bangtan", "Boys", "BTS");
+        -- ("민윤기", "Min", "Yoongi", "AgustD")
+        -- ("정호석", "Jung", "Hoseok", "J-Hope")
+        -- ("전정국", "Jeon", "Jungkook", "jk");
+        
         
 INSERT INTO Albums (albumName, artistID, year)
 VALUES	("Mono", 1, 2018),
@@ -98,7 +102,7 @@ VALUES	("Run BTS! 2015 EP.1 - Open", "First episode of Run BTS!", 1, "https://ww
         ("Run BTS! 2015 EP.3 - Theme Park", "BTS goes to a themepark", 1, "https://www.youtube.com/watch?v=HMG7jim0Bqc&list=PL5hrGMysD_Gut5B6Mms1bpkv44LoOwEHz&index=3"),
         ("161227 밥 먹는 김석진", "", 1, "https://www.youtube.com/watch?v=7fszwWLFAng");
         
-INSERT INTO Tags (name)
+INSERT INTO Tags (tag)
 VALUES	("Run BTS!"),
 		("Live"),
         ("Comedy"),
@@ -107,6 +111,7 @@ VALUES	("Run BTS!"),
         
 INSERT INTO VideoTags (videoID, tagID)
 VALUES	(1, 1),
+		(1, 3),
 		(2, 3),
         (3, 4),
         (4, 5);
