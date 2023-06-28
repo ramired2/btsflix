@@ -30,10 +30,12 @@ CREATE TABLE Albums (
 );
 
 CREATE TABLE Starring (
+	starringID INT AUTO_INCREMENT NOT NULL,
 	videoID INT,
 	artistID INT,
-    FOREIGN KEY (videoID) REFERENCES Videos(videoID) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (artistID) REFERENCES Members(memberID) ON DELETE CASCADE ON UPDATE CASCADE
+    PRIMARY KEY (starringID),
+    FOREIGN KEY (videoID) REFERENCES Videos(videoID) ON UPDATE CASCADE,
+    FOREIGN KEY (artistID) REFERENCES Members(memberID) ON UPDATE CASCADE
 );
 
 CREATE TABLE Videos (
@@ -60,8 +62,10 @@ CREATE TABLE Tags (
 );
 
 CREATE TABLE VideoTags (
+	videoTagsID INT AUTO_INCREMENT NOT NULL,
     videoID INT NOT NULL,
     tagID INT NOT NULL,
+    PRIMARY KEY (videoTagsID),
     FOREIGN KEY (videoID) REFERENCES Videos(videoID)  ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (tagID) REFERENCES Tags(tagID) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -76,11 +80,11 @@ VALUES	("김남준" , "Kim", "Namjoon", "RM"),
         ("정호석", "Jung", "Hoseok", "JHope"),
         ("박지민", "Park", "Jimin", "Jimin"),
         ("김태형", "Kim", "Taehyung", "V"),
-        ("전정국", "Jeon", "Jungkook", "Jungkook");
-        -- ("방탄소년단", "Bangtan", "Boys", "BTS");
-        -- ("민윤기", "Min", "Yoongi", "AgustD")
-        -- ("정호석", "Jung", "Hoseok", "J-Hope")
-        -- ("전정국", "Jeon", "Jungkook", "jk");
+        ("전정국", "Jeon", "Jungkook", "Jungkook"),
+        ("방탄소년단", "Bangtan", "Boys", "BTS"),
+        ("민윤기", "Min", "Yoongi", "AgustD"),
+        ("전정국", "Jeon", "Jungkook", "jk");
+        -- -- ("정호석", "Jung", "Hoseok", "J-Hope")
         
         
 INSERT INTO Albums (albumName, artistID, year)

@@ -1,6 +1,3 @@
--- 		INSERT INTO Nations (nationName, conquestsQuantity, shipQuantity) 
--- 		VALUES(:countryName, :numConquests, :numShips);
-
 -- ----------------------------
 -- 		MEMBERS
 -- ----------------------------
@@ -13,13 +10,19 @@
         SELECT * FROM Members;
         
         -- select all members w out other known aliases (like suga, agustD, prodD)
-		SELECT Members.memberID, CONCAT(Members.lastName, " ", Members.firstName) AS fullName, Members.alias FROM Members GROUP BY fullName;
+		SELECT Members.memberID, CONCAT(Members.lastName, " ", Members.firstName) AS fullName, Members.alias 
+			FROM Members GROUP BY fullName;
         
 		-- select members by specified last name OR first name (w out other known aliases)
-       SELECT Members.memberID, CONCAT(Members.lastName, " ", Members.firstName) AS fullName , Members.alias FROM Members WHERE (Members.lastName = "" OR Members.firstName = "") GROUP BY fullName;
+       SELECT Members.memberID, CONCAT(Members.lastName, " ", Members.firstName) AS fullName , Members.alias 
+			FROM Members 
+            WHERE (Members.lastName = :"" OR Members.firstName = :"") 
+            GROUP BY fullName;
         
         -- select members by ID
-        SELECT Members.memberID, CONCAT(Members.lastName, " ", Members.firstName) AS fullName, Members.alias FROM Members WHERE Members.memberID = :fromDropdown
+        SELECT Members.memberID, CONCAT(Members.lastName, " ", Members.firstName) AS fullName, Members.alias 
+			FROM Members 
+            WHERE Members.memberID = :fromDropdown
         
         -- select all people starring in a video
         SELECT Starring.videoID, Starring.artistID, Members.memberID, Members.alias, CONCAT(Members.lastName, " ", Members.firstName) AS fullName, Members.lastName as ln
@@ -64,7 +67,7 @@
         SELECT Albums.albumID, Albums.albumName, Albums.artistID, CONCAT(Members.lastName, " ", Members.firstName) AS fullName, Members.alias, Albums.year
 			FROM Albums
             INNER JOIN Members ON Albums.artistID = Members.memberID
-            WHERE (Members.lastName = "kim" OR Members.firstName = "" OR Members.alias = "" OR Albums.albumName = "")
+            WHERE (Members.lastName = :"" OR Members.firstName = :"" OR Members.alias = :"" OR Albums.albumName = :"")
             ORDER BY Albums.albumName;
             
 	-- UPDATE
@@ -105,47 +108,95 @@
 
 	-- SELECT
 		-- select all videos
-        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name, Videos.link, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags
+        SELECT * FROM Videos;
+        
+        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name, Videos.link, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
+		GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', ') as starring
 			FROM Videos
             INNER JOIN Platforms ON Videos.platformID = Platforms.platformID
             INNER JOIN VideoTags ON Videos.videoID = VideoTags.videoID
+            LEFT JOIN Starring ON Videos.videoID = Starring.videoID
+            LEFT JOIN Members ON Starring.artistID = Members.memberID
             INNER JOIN Tags ON VideoTags.tagID = Tags.tagID
             GROUP BY Videos.videoID
             ORDER BY Videos.name;
         
         -- select videos by platform
-        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name, Videos.link, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags
+        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name, Videos.link, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
+        GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', ') as starring
 			FROM Videos
             INNER JOIN Platforms ON Videos.platformID = Platforms.platformID
             INNER JOIN VideoTags ON Videos.videoID = VideoTags.videoID
+            LEFT JOIN Starring ON Videos.videoID = Starring.videoID
+            LEFT JOIN Members ON Starring.artistID = Members.memberID
             INNER JOIN Tags ON VideoTags.tagID = Tags.tagID
             WHERE Platforms.platformID = :platformID
             GROUP BY Videos.videoID
             ORDER BY Videos.name;
         
         -- select videos by tags (act like categories)
-        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Videos.link, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags
+        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Videos.link, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
+        GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', ') as starring
 			FROM Videos
             INNER JOIN VideoTags ON Videos.videoID = VideoTags.videoID
+            LEFT JOIN Starring ON Videos.videoID = Starring.videoID
+            LEFT JOIN Members ON Starring.artistID = Members.memberID
             INNER JOIN Tags ON VideoTags.tagID = Tags.tagID
             WHERE Tags.tag = :inputbydropdown
             GROUP BY Videos.videoID
             ORDER BY Videos.name;
         
-        -- select all videos that contain the phrase ''
+        -- select all videos that contain the phrase '' in the name or in the tags // helpful for gen search 
+        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Videos.link, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
+        GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', ') as starring
+			FROM Videos
+            INNER JOIN VideoTags ON Videos.videoID = VideoTags.videoID
+            LEFT JOIN Starring ON Videos.videoID = Starring.videoID
+            LEFT JOIN Members ON Starring.artistID = Members.memberID
+            INNER JOIN Tags ON VideoTags.tagID = Tags.tagID
+            WHERE Videos.name LIKE :'%%' OR Tags.tag LIKE :'%%' OR Members.alias LIKE :'%%'-- quotes r same
+            GROUP BY Videos.videoID
+            ORDER BY Videos.name;
         
-        -- select videos that contain specific members
+        -- select videos that contain specific member // NOT FULL STARRING RETURNED 
+        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Videos.link, Videos.videoID as videoContained, 
+        GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, 
+				(SELECT GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', ') as starring 
+				FROM MEMBERS 
+                LEFT JOIN Starring ON Starring.artistID = Members.memberID 
+                INNER JOIN Videos ON Starring.videoID = Videos.videoID 
+                WHERE Videos.videoID = videoContained) as starred
+			FROM Videos
+            INNER JOIN VideoTags ON Videos.videoID = VideoTags.videoID
+            LEFT JOIN Starring ON Videos.videoID = Starring.videoID
+            LEFT JOIN Members ON Starring.artistID = Members.memberID
+            INNER JOIN Tags ON VideoTags.tagID = Tags.tagID
+            WHERE members.memberID = :memberID -- might have to add name or alias feature here too 
+            GROUP BY Videos.videoID
+            ORDER BY Videos.name;
         
-        -- select videos from a specific platform 
-        
-        -- select five random videos for opening page
-		
+        -- select four random videos for opening page by videoID
+        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name, Videos.link, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
+		GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', ') as starring
+			FROM Videos
+            INNER JOIN Platforms ON Videos.platformID = Platforms.platformID
+            INNER JOIN VideoTags ON Videos.videoID = VideoTags.videoID
+            LEFT JOIN Starring ON Videos.videoID = Starring.videoID
+            LEFT JOIN Members ON Starring.artistID = Members.memberID
+            INNER JOIN Tags ON VideoTags.tagID = Tags.tagID
+            WHERE Videos.videoID = :randNum OR Videos.videoID = :randNum OR Videos.videoID = :randNum OR Videos.videoID = :randNum
+            GROUP BY Videos.videoID
+            ORDER BY Videos.name;
             
 	-- UPDATE
-		
+		UPDATE Videos SET name = :name, description = :desc, platformID = (SELECT PlatformID FROM Platforms WHERE Platforms.name = :platformName), link = :link 
+			WHERE Videos.videoID = :vidId;
+        
+        -- manually insert platform name -- if id rem select and just put id from dropdown
+		UPDATE Videos SET platformID = (SELECT PlatformID FROM Platforms WHERE Platforms.name = :platformName) WHERE Videos.videoID = :vidID;
 
 	-- DELETE
-	
+	DELETE FROM Videos WHERE Videos.videoID = :videoID
     
 -- ----------------------------
 -- 		TAGS
@@ -155,13 +206,13 @@
 			VALUES	(:tag)
 
 	-- SELECT
-		
+		SELECT * FROM Tags
             
 	-- UPDATE
-		
+		UPDATE Tags SET tag = :tag;
 
 	-- DELETE
-	
+	DELETE FROM Tags WHERE tagID = :tagID
     
 -- ----------------------------
 -- 		VIDEO TAGS
@@ -171,30 +222,43 @@
 			VALUES	(:vidID, :tagID);
 
 	-- SELECT
-		-- select all tags
-		
+		-- select all
+        SELECT * FROM VideoTags;
+        
+        SELECT VideoTags.videoID, Videos.name, GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags
+			FROM VideoTags
+			INNER JOIN Tags ON VideoTags.tagID = Tags.tagID
+			INNER JOIN Videos ON VideoTags.videoID = Videos.videoID
+			GROUP BY VideoTags.videoID
+			ORDER BY Videos.Name;
             
 	-- UPDATE
-		
+		-- no need for update can just delete relation
 
 	-- DELETE
-	
+	DELETE FROM VideoTags WHERE videoTagsID = :videotagID
     
 -- ----------------------------
 -- 		STARRING
 -- ----------------------------
 	-- INSERT
 		INSERT INTO Starring (videoID, artistID)
-			VALUES	(:vidID, :memberID)
+			VALUES	(:vidID, :memberID);
 
 	-- SELECT
-		-- select all artists from a video 
-		
-        -- VideoTags.tagID, Tags.tag
+		SELECT * FROM Starring;
+        
+		-- select all artists from a video by id
+        SELECT Videos.videoID, Members.alias as starring, CONCAT(Members.lastName, ' ', Members.firstName) as fullName
+				FROM MEMBERS 
+                LEFT JOIN Starring ON Starring.artistID = Members.memberID 
+                INNER JOIN Videos ON Starring.videoID = Videos.videoID 
+                WHERE Videos.videoID = :vidID;
             
-	-- UPDATE
-		
+	-- UPDATE 
+		UPDATE Starring SET artistID = :artistID  WHERE videoID = :videoIn;
+        UPDATE Starring SET videoID = :videoIn WHERE artistID = :artistID;
 
 	-- DELETE
-	
+	DELETE FROM Starring WHERE starringID = :starringID;
     
