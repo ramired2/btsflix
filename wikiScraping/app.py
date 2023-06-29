@@ -1,4 +1,4 @@
-from flask import Flask
+# from flask import Flask
 import pandas as pd
 from bs4 import BeautifulSoup
 from requests.sessions import Request
@@ -6,15 +6,15 @@ from urllib.request import urlopen, Request
 
 import json
 
-app = Flask(__name__)
-app.debug = True
+# app = Flask(__name__)
+# app.debug = True
 
-@app.route("/")
+# @app.route("/")
 def hello_world():
     return "<p>hi</p>"
 
 # webscrape wiki for bts run episode details  // Run_BTS
-@app.route("/videos/<URL>")
+# @app.route("/videos/<URL>")
 def wikiScrapeEpisodes(URL):
     infos = []
 
@@ -71,5 +71,5 @@ def wikiScrapeEpisodes(URL):
 
     return (json.dumps(infos, indent=4))
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
