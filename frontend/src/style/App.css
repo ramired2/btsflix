@@ -1,0 +1,136 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.content {
+  /* dee4e5 c1c6c7*/
+  /* background-color:#dee4e5; */
+  height: 100vh;
+  background: linear-gradient(.25turn, #F4FDFF, #d4d6d6, #F4FDFF);
+}
+
+/* FOR MAINPAGE STYLING */
+/* shelving */
+.shelfEdge {
+  position: absolute;
+  height: 60px;
+  width: 100%;
+  background-color: #F4FDFF;
+  border-bottom: #897C80;
+  border-top: #897C80;
+  border-bottom: 1px solid #d4d6d6;
+  border-top: 1px solid #d4d6d6;
+}
+
+.topShelf {
+  top: 60px;
+}
+
+.bottomShelf {
+  bottom: 0px;
+  background: linear-gradient(.50turn, #F4FDFF, 50%, #bcc1c1)
+}
+
+.shelfShadow {
+  position: absolute;
+  border-bottom: 60px solid #897C80;
+	border-left: 70px solid transparent;
+	border-right: 70px solid transparent;
+  right: 0px;
+  left:0px
+}
+
+.topShelfShadow {
+  top: 120px;
+  rotate: 180deg;
+}
+
+.bottomShelfShadow {
+  bottom: 60px;
+}
+
+.vert {
+  border-left: 1px solid #897C80;
+  position: absolute;
+  margin-left: -3px;
+  top: 181px;
+  bottom: 10px;
+}
+
+.vertLineL {
+  left: 72px;
+}
+
+.vertLineR {
+  right: 69px;
+}
+
+/* bts albums */
+
+
+/* house */
+.roof {
+  border-left: 5px solid #A188BE;
+  border-right: 5px solid #A188BE;
+  background-color: #A188BE;
+  padding: 15px;
+  position: fixed;
+  height: 570px;
+  z-index: 10;
+}
+
+.houseRoofL {
+  rotate: 60deg;
+  left: 200px;
+}
+
+.houseRoofR {
+  rotate: 300deg;
+  right: 200px;;
+}
+
+.houseBody {
+  position: fixed;
+  top: 400px;
+  bottom:80px;
+  right:60px;
+  left: 60px;
+  /* height: 400px; */
+  /* width: 550px; */
+  background-color: #A188BE;
+}
