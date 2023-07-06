@@ -41,10 +41,9 @@ const Homepage = () => {
     <div className="shelfShadow bottomShelfShadow"></div>
     <div className="shelfEdge bottomShelf"></div>
 
+    <div className="container">
     <div className="house">
-      <div className="houseRoofL roof"></div>
-      <div className="houseRoofR roof"></div>
-      <div className="houseBody"></div>
+      </div>
     </div>
     
     
