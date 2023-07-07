@@ -6,6 +6,7 @@ const Homepage = () => {
   <div className="content">
 
     {/* not done */}
+    <div className="albums">
     <div className="2kool4school album"></div>
     <div className="orul82 album"></div>
     <div className="skoolluvaffair album"></div>
@@ -29,6 +30,7 @@ const Homepage = () => {
     <div className="7 album"></div>
     <div className="be album"></div>
     <div className="proof album"></div>
+    </div>
     {/* not done end */}
 
 
@@ -42,10 +44,15 @@ const Homepage = () => {
     <div className="shelfEdge bottomShelf"></div>
 
     <div className="container">
-    <div className="house">
+      <div className="optionContainer">
+        <div className="TV option"></div>
+
+        <div className="music option"></div>
+
+        <div className="mag option"></div>
       </div>
+      <div className="house"></div>
     </div>
-    
     
   </div>
   );

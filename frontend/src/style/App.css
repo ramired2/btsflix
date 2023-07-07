@@ -73,7 +73,7 @@ body {
 
 .shelfShadow {
   position: relative;
-  border-bottom: 60px solid #897C80;
+  border-bottom: 60px solid #bdbcbf;
 	border-left: 70px solid transparent;
 	border-right: 70px solid transparent;
   right: 0px;
@@ -95,9 +95,7 @@ body {
   position:absolute;
   height: 700px;
   width: 0px;
-  /* margin-left: -3px; */
-  top: 200px;
-  /* bottom: 10px; */
+  top: 210px;
 }
 
 .vertLineL {
@@ -112,15 +110,18 @@ body {
 
 
 /* house */
-.house {
-  /* height: 800px; */
-  /* display: flex;
-  align-items: center; */
+.container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 650px;
+  width: 655px;
+  position: relative;
 }
 
 .house {
   position: absolute;
-  bottom: 80px;
+  bottom: 14px;
   height: 390px;
   width: 655px;
   background: #A188BE;
@@ -151,90 +152,33 @@ body {
   border-top: 7px solid #876ea4;
 }
 
-    
-
-/* .roof {
-  position: sticky;
-  z-index: 1;
-}
-
-.roofD {
-  border-left: 5px solid #472074;
-  border-right: 5px solid #472074;
-  background-color: #472074;
-  position: absolute;
-  height: 50px;
-  top: 0px;
-}
-
-.houseRoofL {
-  rotate: 60deg;
-  left: 200px;
-}
-
-.houseRoofR {
-  rotate: 300deg;
-  right: 200px;;
-} */
-
-.container {
+/* OPTIONS FOR WEBSITE */
+.optionContainer {
+  width: fit-content;
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-/* .houseBody {
+.option {
+  margin: 90px 15px 0px 15px;
+  width: 150px;
+  height: 150px;
   position: relative;
-  top: 500px;
-  /* bottom:90px;
-  right:50px;
-  left: 50px;
-  height: 570px;
-  /* width:800px;
-  background-color: #A188BE;
-} */
+}
 
-.roof {
-  /* content: '';
-  position: absolute;
-  top: -95px;
-  left: 33px;
-  right: 33px;
-  height: 450px;
-  width: 450px;
-  background: #A188BE;
-  transform: rotate(45deg);
-  border-top: 10px solid #876ea4;
-  border-left: 10px solid #876ea4;
-  z-index: 2 */
+.TV {
+  background-color: burlywood;
+  z-index: 5;
+}
 
-  /* content: ''; */
-  /* position: absolute;
-  top:300px;
-  left:50%;
-  right: 50%;
+.mag {
+  background-color: burlywood;
+  z-index: 5;
+}
 
-  height: 0;
-  width:100%;
-
-  border-left: 5px solid black;
-  border-right: 5px solid transparent;
-
-  border-bottom: 5px solid transparent;
-  border-top: 5px solid black;
-  z-index: 15;
-  rotate: 45deg; */
-
-  /* position: relative;
-  left:40px;
-  right:40px;
-
-  /* width: 0;  
-  height: 0; 
-  border-left: 200px solid transparent;
-  border-right: 200px solid transparent;
-    
-  border-bottom: 200px solid green;
-
-  z-index: 1; */
+.music {
+  background-color: burlywood;
+  z-index: 5;
 }
