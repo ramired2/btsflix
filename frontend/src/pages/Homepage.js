@@ -6,30 +6,30 @@ const Homepage = () => {
   <div className="content">
 
     {/* not done */}
-    <div className="albums">
-    <div className="2kool4school album"></div>
-    <div className="orul82 album"></div>
-    <div className="skoolluvaffair album"></div>
-    <div className="dark&wild album"></div>
-    <div className="hyyh1 album"></div>
-    <div className="hyyh2 album"></div>
-    <div className="youngforever album"></div>
-    <div className="wings album"></div>
-    <div className="neverwalkalone album"></div>
+      <div className="albums">
+      <div className="2kool4school album"></div>
+      <div className="orul82 album"></div>
+      <div className="skoolluvaffair album"></div>
+      <div className="dark&wild album"></div>
+      <div className="hyyh1 album"></div>
+      <div className="hyyh2 album"></div>
+      <div className="youngforever album"></div>
+      <div className="wings album"></div>
+      <div className="neverwalkalone album"></div>
 
-    <div className="armybomb">
-      <div className="armyBase"></div>
-      <div className="armyBody"></div>
-    </div>
+      <div className="armybomb">
+        <div className="armyBase"></div>
+        <div className="armyBody"></div>
+      </div>
 
-    <div className="her album"></div>
-    <div className="tear album"></div>
-    <div className="answer album"></div>
+      <div className="her album"></div>
+      <div className="tear album"></div>
+      <div className="answer album"></div>
 
-    <div className="persona album"></div>
-    <div className="7 album"></div>
-    <div className="be album"></div>
-    <div className="proof album"></div>
+      <div className="persona album"></div>
+      <div className="7 album"></div>
+      <div className="be album"></div>
+      <div className="proof album"></div>
     </div>
     {/* not done end */}
 
@@ -47,7 +47,13 @@ const Homepage = () => {
       <div className="optionContainer">
         <div className="TV option"></div>
 
-        <div className="music option"></div>
+        <div className="music option">
+          <div className="cdPlayer">
+            <div className="cdContainer">
+              <div className="cd"></div>
+            </div>
+          </div>
+        </div>
 
         <div className="mag option"></div>
       </div>

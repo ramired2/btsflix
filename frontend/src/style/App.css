@@ -107,6 +107,10 @@ body {
 }
 
 /* bts albums */
+/* .album {
+  height: 40px
+  wid
+} */
 
 
 /* house */
@@ -181,4 +185,86 @@ body {
 .music {
   background-color: burlywood;
   z-index: 5;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* music components */
+.cd {
+  content: "";
+  margin: 0 auto;
+  height: 90px;
+  width: 90px;
+  /* background-color:#897C80; */
+  background: 
+              url(../../public/answer_80x80.jpg); /*answer colors*/
+  border-radius: 50%;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+}
+.cd::before {
+  margin: 0 auto;
+  content: "";
+  height: 5px;
+  width: 5px;
+  background-color:rgb(50, 47, 47);
+  border-radius: 50%;
+  /* display: flex; */
+}
+
+.cdContainer {
+  height: 120px;
+  width: 120px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cdContainer:hover {
+  /* circular rotation for cd */
+  animation: cdrotate 1s linear;
+}
+
+@keyframes cdrotate{
+  0%{
+      transform: rotate(0deg);
+  }
+  50%{
+      transform: rotate(180deg);
+  }
+  100%{
+      transform: rotate(360deg);
+  }
+}
+
+.cdPlayer {
+  height: 120px;
+  width: 120px;
+  margin: 15px;
+  border-radius: 5px;
+  display: flex;
+  background-color: #d4d6d6;
+  /* z-index: 6; */
+}
+.cdPlayer::before {
+  height: 110px;
+  width: 110px;
+  margin: 15px;
+  border-radius: 5px;
+  display: flex;
+  background: linear-gradient(.50turn, #23535d, 50%, #41b91f)
+}
+
+/* .music::after {
+  margin: 0 auto;
+  content: "";
+  height: 5px;
+  width: 5px;
+  background-color:black;
+  border-radius: 50%;
+  display: flex;
+  z-index: 7;
+} */
