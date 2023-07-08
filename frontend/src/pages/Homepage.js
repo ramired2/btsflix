@@ -47,10 +47,9 @@ const Homepage = () => {
       <div className="optionContainer">
         <div className="TV option">
           <div className="tvBase">
-            <div className="tvDetails">
-              
+            <div className="tvStatic"></div>
             </div>
-          </div>
+            <div className="tvDetails"></div>
         </div>
 
         <div className="music option">
@@ -61,7 +60,9 @@ const Homepage = () => {
           </div>
         </div>
 
-        <div className="mag option"></div>
+        <div className="mag option">
+          <div className="mags"></div>
+        </div>
       </div>
       <div className="house"></div>
     </div>

@@ -129,7 +129,7 @@ body {
   height: 390px;
   width: 655px;
   background: #A188BE;
-  /* box-shadow: 10px 0px 10px 0px #746784; */
+  box-shadow: 0px -3px 7px 0px #746784;
 }
 .house::before {
   content: '';
@@ -171,7 +171,8 @@ body {
   width: 170px;
   height: 150px;
   position: relative;
-  box-shadow: 0 8px 7px #746784;
+  box-shadow: 0px 0px 11px 4px #746784;
+  border-radius: 3px;
 }
 
 .TV {
@@ -185,6 +186,9 @@ body {
 .mag {
   background-color: burlywood;
   z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content:center;
 }
 
 .music {
@@ -198,32 +202,22 @@ body {
 
 /* tv components */
 .TV::before { /*basic base*/
-  /* width:27px;
-  height: 40px;
-  content: "";
-  border-radius: 7px;
-  position: absolute;
-  left: 30px;
-  top:17px;
-  background-color: #d4d6d6; */
-
-
-  content: "";
+    content: "";
   width: 150px;
   height: 95px;
   background-color: #4f425f;
-  /* margin: 0 auto; */
+  border: 3px solid #49325a;
   border-radius: 10px;
-  /* z-index: 7; */
+  z-index: 6;
   position: absolute;
   text-align: left;
+  box-shadow: 2px 9px 5px #ab885a;
 }
-.TV::after { /*static frozen */
+.TV::after { /*static screen */
   content: "";
   width: 110px;
   height: 70px;
   background-color: #1d1b22;
-  /* background-image: repeating-radial-gradient(circle at 17% 32%, white, black 0.00085px); */
   position: absolute;
   border-radius: 5px;
   border: 2px solid #715983;
@@ -231,30 +225,16 @@ body {
   z-index: 6;
 }
 
-/*   width:27px; TV antenna
-  height: 40px;
-  content: "";
-  border-radius: 7px;
-  position: absolute;
-  left: 30px;
-  top:17px;
-  /* border-top: 8px solid #d4d6d6; 
-  background-color: #d4d6d6; */
-
-.tvBase { /*static container*/
+.tvStatic { /*static container*/
   height: 150px;
   width: 170px;
-  /* background-color: #61dafb; */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index:7;
 }
-.tvBase::before {
-  /* content: "";*/
-}
-.tvBase:hover { /*static moving*/
+.tvStatic:hover { /*static moving*/
   width: 110px;
   height: 70px;
   margin: 3px 30px 2px 6px;
@@ -263,34 +243,115 @@ body {
   background-image: repeating-radial-gradient(circle at 17% 32%, white, black 0.00085px);
   background-position: center;
   animation: back 5s linear infinite;
-  /* z-index: 8; */
 }
 
 /* https://stackoverflow.com/questions/70208639/how-to-improve-an-animated-tv-static-effect-using-a-pure-css-gradient */
-.tvBase::before:hover{
+.tvStatic::before:hover{
   background-image: repeating-radial-gradient(circle at 17% 32%, rgb(255, 255, 255), black 0.00085px);
   background-position: center;
   animation: back 5s linear infinite;
 }
 @keyframes back {
-  from {
-  background-size: 100% 100%;
-}
-to {
-  background-size: 200% 200%;
-}
+    from {
+    background-size: 100% 100%;
+  }
+  to {
+    background-size: 200% 200%;
+  }
 }
 
-
-/* .tvDetails {
+.tvDetails { /*the left tv foot*/
   position: absolute;
   content: "";
+  width: 14px;
+  height: 10px;
+  background-color: #313030;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-color: #49325a;
+  left: 30px;
+  bottom: 15px;
+  z-index: 6;
+}
+
+.tvDetails::before { /*the right tv foot*/
+  position: absolute;
+  content: "";
+  width: 14px;
+  height: 10px;
+  background-color: #313030;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  right: -90px;
+  z-index: 6;
+}
+
+.tvDetails::after { /*tv btn*/
   width:20px;
-  height:20px;
-  background-color: #61dafb;
+  height: 20px;
+  content: "";
   border-radius: 50%;
-  margin: 80px 0px 0px 10px;
-} */
+  position: absolute;
+  top: -40px;
+  right: -112px;
+  background-color: #d4d6d6;
+  z-index: 7;
+  box-shadow: 2px 2px 5px #3f294e;
+}
+
+.mags {
+  height: 115px;
+  width: 85px;
+  background-color: #a63838;
+  background: url(../../public/esquireCover_85x115.jpg);
+  rotate: -45deg;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  box-shadow: 0px -1px 10px 4px #ab885a
+}
+.mags::before {
+  content: "";
+  height: 113px;
+  width: 85px;  
+  background-color: #313030;
+  background: url(../../public/timeCover_85x113.jpg);
+  rotate: 20deg;
+  position: absolute;
+  box-shadow: 0px 1px 10px 2px #ab885a;
+}
+.mags::after {
+  content: "";
+  height: 113px;
+  width: 90px;
+  background-color: #784646;
+  background: url(../../public/timeCover2_90x113.jpg);
+  rotate: 50deg;
+  position: absolute;
+  box-shadow: 0px 1px 10px 1px #ab885a;
+}
+
+.mags:hover {
+  animation: shake 1s linear infinite;
+}
+@keyframes shake{
+  0%{
+      transform: rotate(0deg);
+  }
+  25%{
+      transform: rotate(0deg);
+  }
+  50%{
+      transform: rotate(-10deg);
+  }
+  75%{
+    transform: rotate(10deg);
+  }
+  100%{
+    transform: rotate(00deg);
+  }
+}
 
 /* music components */
 .cd { /*cd*/
@@ -322,10 +383,10 @@ to {
   content: "";
   height: 7px;
   width: 7px;
-  background-color: rgb(49, 48, 48);
+  background-color: #313030;
   border-radius: 50%;
   position: absolute;
-  box-shadow: 2px 1px #97989c;
+  box-shadow: 0px 0px 7px 2px #97989c;
 }
 
 .cdContainer { /*container around whole white part so cd spins*/
@@ -338,7 +399,7 @@ to {
 }
 .cdContainer:hover {
   /* circular rotation for cd */
-  animation: cdrotate 1s linear;
+  animation: cdrotate 1.75s linear; /*infintie*/
 }
 
 @keyframes cdrotate{
@@ -369,7 +430,7 @@ to {
                     radial-gradient(#e0dede 20%, transparent 20%);
   background-position: 0 0, 50px 50px;
   background-size: 10px 10px;
-  box-shadow: 2px 9px 5px rgb(171, 136, 90);
+  box-shadow: 2px 9px 5px #ab885a;
 }
 .cdPlayer::before { /*the greyish circle around cd*/
   content: "";
