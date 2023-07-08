@@ -129,6 +129,7 @@ body {
   height: 390px;
   width: 655px;
   background: #A188BE;
+  /* box-shadow: 10px 0px 10px 0px #746784; */
 }
 .house::before {
   content: '';
@@ -167,14 +168,18 @@ body {
 
 .option {
   margin: 90px 15px 0px 15px;
-  width: 150px;
+  width: 170px;
   height: 150px;
   position: relative;
+  box-shadow: 0 8px 7px #746784;
 }
 
 .TV {
   background-color: burlywood;
   z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mag {
@@ -191,31 +196,139 @@ body {
   justify-content: center;
 }
 
-/* music components */
-.cd {
+/* tv components */
+.TV::before { /*basic base*/
+  /* width:27px;
+  height: 40px;
   content: "";
-  margin: 0 auto;
-  height: 90px;
-  width: 90px;
-  /* background-color:#897C80; */
-  background: 
-              url(../../public/answer_80x80.jpg); /*answer colors*/
-  border-radius: 50%;
-  z-index: 6;
-  display: flex;
-  align-items: center;
+  border-radius: 7px;
+  position: absolute;
+  left: 30px;
+  top:17px;
+  background-color: #d4d6d6; */
+
+
+  content: "";
+  width: 150px;
+  height: 95px;
+  background-color: #4f425f;
+  /* margin: 0 auto; */
+  border-radius: 10px;
+  /* z-index: 7; */
+  position: absolute;
+  text-align: left;
 }
-.cd::before {
-  margin: 0 auto;
+.TV::after { /*static frozen */
   content: "";
-  height: 5px;
-  width: 5px;
-  background-color:rgb(50, 47, 47);
-  border-radius: 50%;
-  /* display: flex; */
+  width: 110px;
+  height: 70px;
+  background-color: #1d1b22;
+  /* background-image: repeating-radial-gradient(circle at 17% 32%, white, black 0.00085px); */
+  position: absolute;
+  border-radius: 5px;
+  border: 2px solid #715983;
+  margin: 3px 30px 2px 6px;
+  z-index: 6;
 }
 
-.cdContainer {
+/*   width:27px; TV antenna
+  height: 40px;
+  content: "";
+  border-radius: 7px;
+  position: absolute;
+  left: 30px;
+  top:17px;
+  /* border-top: 8px solid #d4d6d6; 
+  background-color: #d4d6d6; */
+
+.tvBase { /*static container*/
+  height: 150px;
+  width: 170px;
+  /* background-color: #61dafb; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index:7;
+}
+.tvBase::before {
+  /* content: "";*/
+}
+.tvBase:hover { /*static moving*/
+  width: 110px;
+  height: 70px;
+  margin: 3px 30px 2px 6px;
+  position: relative;
+  border-radius: 5px;
+  background-image: repeating-radial-gradient(circle at 17% 32%, white, black 0.00085px);
+  background-position: center;
+  animation: back 5s linear infinite;
+  /* z-index: 8; */
+}
+
+/* https://stackoverflow.com/questions/70208639/how-to-improve-an-animated-tv-static-effect-using-a-pure-css-gradient */
+.tvBase::before:hover{
+  background-image: repeating-radial-gradient(circle at 17% 32%, rgb(255, 255, 255), black 0.00085px);
+  background-position: center;
+  animation: back 5s linear infinite;
+}
+@keyframes back {
+  from {
+  background-size: 100% 100%;
+}
+to {
+  background-size: 200% 200%;
+}
+}
+
+
+/* .tvDetails {
+  position: absolute;
+  content: "";
+  width:20px;
+  height:20px;
+  background-color: #61dafb;
+  border-radius: 50%;
+  margin: 80px 0px 0px 10px;
+} */
+
+/* music components */
+.cd { /*cd*/
+  content: "";
+    margin: 0 auto;
+    height: 90px;
+    width: 90px;
+    background: url(../../public/answer_90x90.jpg);
+    border-radius: 50%;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #94969b;
+    box-shadow: 2px 2px #bbbcc0;
+}
+.cd::before { /*white circle in cd*/
+  position: relative;
+  margin: 0 auto;
+  content: "";
+  height: 20px;
+  width: 20px;
+  background-color: #e7eaea;
+  border-radius: 50%;
+}
+.cd::after { /*black dot in cd*/
+  justify-content: center;
+  margin: 0 auto;
+  content: "";
+  height: 7px;
+  width: 7px;
+  background-color: rgb(49, 48, 48);
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 2px 1px #97989c;
+}
+
+.cdContainer { /*container around whole white part so cd spins*/
   height: 120px;
   width: 120px;
   position: relative;
@@ -240,23 +353,56 @@ body {
   }
 }
 
-.cdPlayer {
+.cdPlayer { /*cd player base and polka dots*/
+  content: "";
+  height: 125px;
+  width: 125px;
+  margin: auto 0;
+  border-radius: 12px;
+  display: flex;
+  background: #e1e3e3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: radial-gradient(#b2afaf 20%, transparent 20%),
+                    radial-gradient(#e0dede 20%, transparent 20%);
+  background-position: 0 0, 50px 50px;
+  background-size: 10px 10px;
+  box-shadow: 2px 9px 5px rgb(171, 136, 90);
+}
+.cdPlayer::before { /*the greyish circle around cd*/
+  content: "";
+  height: 105px;
+  width: 105px;
+  margin: auto 0;
+  border-radius: 50%;
+  display: flex;
+  position: absolute;
+  border: 1px solid #aba9ad;
+  background: radial-gradient(#9b99a1, 45%, #e7eaea);
+}
+
+/* .music::before {
+  content: "";
   height: 120px;
   width: 120px;
   margin: 15px;
   border-radius: 5px;
   display: flex;
   background-color: #d4d6d6;
-  /* z-index: 6; */
+  z-index: 7;
 }
-.cdPlayer::before {
+.music::after {
+  content: "";
   height: 110px;
   width: 110px;
   margin: 15px;
   border-radius: 5px;
   display: flex;
-  background: linear-gradient(.50turn, #23535d, 50%, #41b91f)
-}
+  background: linear-gradient(.50turn, #23535d, 50%, #41b91f);
+  z-index: 7;
+} */
 
 /* .music::after {
   margin: 0 auto;

@@ -45,7 +45,13 @@ const Homepage = () => {
 
     <div className="container">
       <div className="optionContainer">
-        <div className="TV option"></div>
+        <div className="TV option">
+          <div className="tvBase">
+            <div className="tvDetails">
+              
+            </div>
+          </div>
+        </div>
 
         <div className="music option">
           <div className="cdPlayer">
