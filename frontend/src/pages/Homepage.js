@@ -64,7 +64,11 @@ const Homepage = () => {
           <div className="mags"></div>
         </div>
       </div>
-      <div className="house"></div>
+      <div className="house">
+        <div className="houseDetails"></div>
+        <div className="houseWalls"></div>
+        <div className="houseWalls wallsRight"></div>
+      </div>
     </div>
     
   </div>
