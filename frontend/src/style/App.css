@@ -146,8 +146,8 @@ body {
   /* background: linear-gradient(45deg, #7c6399, #A188BE 90%), */
   /* linear-gradient(180deg, #7c6399 90%, #A188BE); */
   transform: rotate(45deg);
-  border-top: 30px solid #876ea4;
-  border-left: 30px solid #876ea4;
+  border-top: 32px solid #876ea4;
+  border-left: 32px solid #876ea4;
   z-index: 1;
 
 }
@@ -174,7 +174,7 @@ body {
 .houseDetails::before {
   content: "";
   position: absolute;
-  border-bottom: 40px solid #1d1b22;
+  border-bottom: 40px solid #332b39;
 	border-left: 30px solid transparent;
 	border-right: 30px solid transparent;
   bottom: 40px;
@@ -186,53 +186,52 @@ body {
     display: flex;
     height: 280px;
     width: 640px;
-    top: -310px; /*525252*/
+    top: -300px; /*525252*/
     background: linear-gradient(180deg, #A188BE 60%,#866da3, #553f6e);
     /* background:  #A188BE;radial-gradient(#7c6399, #A188BE, #7c6399); */
     position: absolute;
 }
 
 .houseWalls { /*inside house shadow left*/
-  content: "";
-  position: absolute;
-  border-bottom: 30px solid #481bbb;
-  border-left: 13px solid transparent;
-  border-right: 40px solid transparent;
-  width: 250px;
-  height: 0px;
-  top: 182.5px;
-  left: -135px;
-  text-align: left;
-  rotate: 90deg;
-  z-index: 5;
+    content: "";
+    position: absolute;
+    border-bottom: 28px solid #553f6e;
+    border-left: 0px solid transparent;
+    border-right: 38px solid transparent;
+    width: 266px;
+    height: 0px;
+    top: 186px;
+    left: -138px;
+    text-align: left;
+    rotate: 90deg;
+    z-index: 5;
 }
 .wallsRight { /*inside house shadow right*/
-  left: 488.4px;
-  border-bottom: 30px solid #481bbb;
+  left: 488px;
+  /* border-bottom: 30px solid #553f6e; */
   border-left: 40px solid transparent;
-  border-right: 13px solid transparent;
+  border-right: 0px solid transparent;
   rotate: 270deg;
 }
 
 .houseWalls::before {
   content: "";
   position: absolute;
-  border-bottom: 32.9px solid #381a84;
-  border-left: 30px solid transparent;
-  border-right: 16px solid transparent;
-  width: 419px;
+  border-bottom: 29px solid #553f6e;
+  border-left: 35px solid transparent;
+  border-right: 13px solid transparent;
+  width: 422px;
   height: 0px;
   rotate: 45deg;
-  left: -401px;
-  top: -164px;
-  padding: 3.1px;
+  left: -392px;
+  top: -160px;
 }
 .wallsRight::before {
-  left: 180px;
-  border-left: 16px solid transparent;
-  border-right: 30px solid transparent;
+  left: 189px;
+  border-left: 13px solid transparent;
+  border-right: 35px solid transparent;
   rotate: 315deg;
-  top: -163px;
+  top: -159.5px;
 }
 
 /* OPTIONS FOR WEBSITE */
@@ -245,7 +244,7 @@ body {
 }
 
 .option {
-  margin: 90px 15px 0px 15px;
+  margin: 140px 11px 0px 11px;
   width: 170px;
   height: 150px;
   position: relative;
@@ -255,7 +254,7 @@ body {
 }
 
 .TV {
-  background-color: burlywood;
+  background-color: #e7dbf3;
   z-index: 5;
   display: flex;
   align-items: center;
@@ -263,7 +262,7 @@ body {
 }
 
 .mag {
-  background-color: burlywood;
+  background-color: #e7dbf3;
   z-index: 5;
   display: flex;
   align-items: center;
@@ -271,7 +270,7 @@ body {
 }
 
 .music {
-  background-color: burlywood;
+  background-color: #e7dbf3;
   z-index: 5;
   position: relative;
   display: flex;
@@ -290,13 +289,14 @@ body {
   z-index: 6;
   position: absolute;
   text-align: left;
-  box-shadow: 2px 9px 5px #ab885a;
+  box-shadow: 2px 9px 5px #9f92a9;
 }
 .TV::after { /*static screen */
   content: "";
   width: 110px;
   height: 70px;
-  background-color: #1d1b22;
+  /* background-color: #1d1b22; */
+  background: url(../../public/runbts_110x70.png);
   position: absolute;
   border-radius: 5px;
   border: 2px solid #715983;
@@ -389,7 +389,7 @@ body {
   display: flex;
   align-items: center;
   justify-content:center;
-  box-shadow: 0px -1px 10px 4px #ab885a
+  box-shadow: 0px -1px 10px 4px #9f92a9
 }
 .mags::before {
   content: "";
@@ -399,7 +399,7 @@ body {
   background: url(../../public/timeCover_85x113.jpg);
   rotate: 20deg;
   position: absolute;
-  box-shadow: 0px 1px 10px 2px #ab885a;
+  box-shadow: 0px 1px 10px 2px #9f92a9;
 }
 .mags::after {
   content: "";
@@ -409,7 +409,7 @@ body {
   background: url(../../public/timeCover2_90x113.jpg);
   rotate: 50deg;
   position: absolute;
-  box-shadow: 0px 1px 10px 1px #ab885a;
+  box-shadow: 0px 1px 10px 1px #9f92a9;
 }
 
 .mags:hover {
@@ -510,7 +510,9 @@ body {
                     radial-gradient(#e0dede 20%, transparent 20%);
   background-position: 0 0, 50px 50px;
   background-size: 10px 10px;
-  box-shadow: 2px 9px 5px #ab885a;
+  box-shadow: 2px 9px 5px #9f92a9;
+
+  border: 1px solid rgb(156, 152, 152);
 }
 .cdPlayer::before { /*the greyish circle around cd*/
   content: "";
