@@ -39,14 +39,15 @@
 
 body {
   height: 100vh;
-  background: linear-gradient(.25turn, #F4FDFF, #d4d6d6, #F4FDFF);
+  /* background: linear-gradient(.25turn, #F4FDFF, #d4d6d6, #F4FDFF); */
+  background-color:#0c0412;
 }
 
 .content {
-  /* dee4e5 c1c6c7*/
-  /* background-color:#dee4e5; */
-  /* height: calc(100vh*1.3);
-  background: linear-gradient(.25turn, #F4FDFF, #d4d6d6, #F4FDFF); */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 /* FOR MAINPAGE STYLING */
@@ -106,136 +107,134 @@ body {
   right: 69px;
 }
 
-/* bts albums */
-/* .album {
-  height: 40px
-  wid
-} */
-
-
 /* house */
 .container {
+  top: 100px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 650px;
-  width: 655px;
+  height: 900px;
+  width: 820px;
+  left:20px;
+  right: 30px;
   position: relative;
+  margin: 0 auto;
 }
 
 .house {
   position: absolute;
-  bottom: 14px;
-  height: 390px;
-  width: 655px;
+  bottom: 60px;
+  height: 470px;
+  width: 776px;
   background: #A188BE;
-  /* background: linear-gradient(to right, #7c6399, #A188BE, #7c6399); */
-  box-shadow: 0px -3px 7px 0px #746784;
+  /* box-shadow: 0px -3px 7px 0px #746784; */
+  box-shadow: 0px 1px 18px 7px #9f42f1;
   z-index: 3;
 }
 .house::before {
   content: '';
   position: absolute;
-  top: -225px;
-  left: 12%;
-  height: 467px;
-  width: 467.5px;
-  background: #A188BE;              /* A188BE             AF96CC        E2C6CC*/
-  background: linear-gradient(315deg, #A188BE 60%,#866da3, #553f6e); /*#414141 70%,#333333, #333*/
-  /* background: radial-gradient(#7c6399, #A188BE, #7c6399); */
-  /* background: linear-gradient(45deg, #7c6399, #A188BE 90%), */
-  /* linear-gradient(180deg, #7c6399 90%, #A188BE); */
+  top: -274px;
+  left: 12.5%;
+  height: 547px;
+  width: 547.5px;
+  background: #A188BE;             
+  background: linear-gradient(315deg, #A188BE 60%,#866da3, #553f6e); 
   transform: rotate(45deg);
   border-top: 32px solid #876ea4;
   border-left: 32px solid #876ea4;
+  box-shadow: -5px -3px 18px 7px #9f42f1;
   z-index: 1;
-
 }
 .house::after {
   content: '';
   position: absolute;
-  top: -100px;
+  top: -140px;
   left: 4%;
-  height: 90px;
-  width: 50px;
+  height: 100px;
+  width: 70px;
   background: #876ea4;
-  z-index: 1;
+  /* z-index: 1; */
   border-top: 7px solid #876ea4;
+  box-shadow: -3px -7px 17px 2px #9f42f1;
 }
 .houseDetails {
   content: "";
   height: 50px;
-  width: 655px;
+  width: 776px;
   background-color: #49325a;
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   bottom: 0px;
 }
 .houseDetails::before {
   content: "";
   position: absolute;
   border-bottom: 40px solid #332b39;
-	border-left: 30px solid transparent;
-	border-right: 30px solid transparent;
-  bottom: 40px;
+	border-left: 0px solid transparent;
+	border-right: 0px solid transparent;
+  bottom: 48px;
   right: 0px;
   left:0px;
+  z-index: 5;
 }
 .houseDetails::after {
   content: "";
     display: flex;
-    height: 280px;
-    width: 640px;
-    top: -300px; /*525252*/
-    background: linear-gradient(180deg, #A188BE 60%,#866da3, #553f6e);
-    /* background:  #A188BE;radial-gradient(#7c6399, #A188BE, #7c6399); */
+    height: 360px;
+    width: 756px;
+    left: 8px;
+    top: -395px; 
+    background: linear-gradient(180deg, #A188BE 40%,#866da3, #553f6e);
     position: absolute;
 }
 
 .houseWalls { /*inside house shadow left*/
-    content: "";
-    position: absolute;
-    border-bottom: 28px solid #553f6e;
-    border-left: 0px solid transparent;
-    border-right: 38px solid transparent;
-    width: 266px;
-    height: 0px;
-    top: 186px;
-    left: -138px;
-    text-align: left;
-    rotate: 90deg;
-    z-index: 5;
-}
-.wallsRight { /*inside house shadow right*/
-  left: 488px;
-  /* border-bottom: 30px solid #553f6e; */
-  border-left: 40px solid transparent;
-  border-right: 0px solid transparent;
-  rotate: 270deg;
+  content: "";
+  position: absolute;
+  border-bottom: 28px solid #553f6e;
+  border-left: 5px solid transparent;
+  border-right: 43px solid transparent;
+  width: 340px;
+  height: 0px;
+  top: 220px;
+  left: -182px;
+  text-align: left;
+  rotate: 90deg;
+  z-index: 5;
 }
 
 .houseWalls::before {
   content: "";
   position: absolute;
-  border-bottom: 29px solid #553f6e;
-  border-left: 35px solid transparent;
-  border-right: 13px solid transparent;
-  width: 422px;
-  height: 0px;
-  rotate: 45deg;
-  left: -392px;
-  top: -160px;
+  top: -637px;
+  left: -280px;
+  height: 519px;
+  width: 520.5px;
+  background: transparent;        
+  transform: rotate(315deg);
+  border-top: 32px solid #5e4080; /*553f6e 603e87*/
+  border-left: 32px solid #5e4080;
+  z-index: 5;
 }
-.wallsRight::before {
-  left: 189px;
-  border-left: 13px solid transparent;
-  border-right: 35px solid transparent;
-  rotate: 315deg;
-  top: -159.5px;
+.houseWalls::after {
+  content: "";
+  position: absolute;
+  border-bottom: 28px solid #553f6e;
+  border-left: 43px solid transparent;
+  border-right: 5px solid transparent;
+  width: 340px;
+  height: 0px;
+  bottom: 726px;
+  left: -8px;
+  text-align: left;
+  rotate: 180deg;
+  /* z-index: 5; */
 }
 
 /* OPTIONS FOR WEBSITE */
 .optionContainer {
+  top: 25px;
   width: fit-content;
   position: relative;
   display: inline-flex;
@@ -244,17 +243,19 @@ body {
 }
 
 .option {
-  margin: 140px 11px 0px 11px;
+  margin: 140px 15px 0px 15px;
   width: 170px;
   height: 150px;
+  padding: 10px;
   position: relative;
   /* box-shadow: 0px 0px 11px 4px #746784; */
   box-shadow: -1px 1px 12px 7px #746784;
   border-radius: 3px;
+  background-color: #e1d6ece8;
 }
 
 .TV {
-  background-color: #e7dbf3;
+  /* background-color: #e7dbf3; */
   z-index: 5;
   display: flex;
   align-items: center;
@@ -262,7 +263,7 @@ body {
 }
 
 .mag {
-  background-color: #e7dbf3;
+  /* background-color: #e7dbf3; */
   z-index: 5;
   display: flex;
   align-items: center;
@@ -270,7 +271,7 @@ body {
 }
 
 .music {
-  background-color: #e7dbf3;
+  /* background-color: #e7dbf3; */
   z-index: 5;
   position: relative;
   display: flex;
@@ -348,8 +349,8 @@ body {
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
   border-bottom-color: #49325a;
-  left: 30px;
-  bottom: 15px;
+  left: 45px;
+  bottom: 25px;
   z-index: 6;
 }
 
@@ -372,7 +373,7 @@ body {
   border-radius: 50%;
   position: absolute;
   top: -40px;
-  right: -112px;
+  right: -107px;
   background-color: #d4d6d6;
   z-index: 7;
   box-shadow: 2px 2px 5px #3f294e;
