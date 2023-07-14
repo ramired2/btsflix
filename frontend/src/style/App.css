@@ -41,6 +41,13 @@ body {
   height: 100vh;
   /* background: linear-gradient(.25turn, #F4FDFF, #d4d6d6, #F4FDFF); */
   background-color:#0c0412;
+  color: #A188BE;
+}
+
+.text {
+  color: #A188BE;
+  /* height: 50px;
+  width: 50px; */
 }
 
 .content {
@@ -50,7 +57,7 @@ body {
   position: relative;
 }
 
-/* FOR MAINPAGE STYLING */
+/* FOR HOMEPAGE STYLING */
 /* shelving */
 .shelfEdge {
   position: relative;
@@ -250,8 +257,8 @@ body {
   position: relative;
   /* box-shadow: 0px 0px 11px 4px #746784; */
   box-shadow: -1px 1px 12px 7px #746784;
-  border-radius: 3px;
-  background-color: #e1d6ece8;
+  border-radius: 5px;
+  background-color: #332b39d2;
 }
 
 .TV {
@@ -290,7 +297,7 @@ body {
   z-index: 6;
   position: absolute;
   text-align: left;
-  box-shadow: 2px 9px 5px #9f92a9;
+  box-shadow: 2px 9px 5px #231f24;
 }
 .TV::after { /*static screen */
   content: "";
@@ -390,7 +397,7 @@ body {
   display: flex;
   align-items: center;
   justify-content:center;
-  box-shadow: 0px -1px 10px 4px #9f92a9
+  box-shadow: 0px -1px 10px 4px #231f24
 }
 .mags::before {
   content: "";
@@ -400,7 +407,7 @@ body {
   background: url(../../public/timeCover_85x113.jpg);
   rotate: 20deg;
   position: absolute;
-  box-shadow: 0px 1px 10px 2px #9f92a9;
+  box-shadow: 0px 1px 10px 2px #231f24;
 }
 .mags::after {
   content: "";
@@ -410,7 +417,7 @@ body {
   background: url(../../public/timeCover2_90x113.jpg);
   rotate: 50deg;
   position: absolute;
-  box-shadow: 0px 1px 10px 1px #9f92a9;
+  box-shadow: 0px 1px 10px 1px #231f24;
 }
 
 .mags:hover {
@@ -511,7 +518,7 @@ body {
                     radial-gradient(#e0dede 20%, transparent 20%);
   background-position: 0 0, 50px 50px;
   background-size: 10px 10px;
-  box-shadow: 2px 9px 5px #9f92a9;
+  box-shadow: 2px 9px 5px #231f24;
 
   border: 1px solid rgb(156, 152, 152);
 }
@@ -527,4 +534,110 @@ body {
   background: radial-gradient(#9b99a1, 45%, #e7eaea);
 }
 
- 
+/* FOR NAVBAR STYLING */
+.nav {
+  /* background-color: #f6f6f6; */
+  display: flex;
+  position: fixed;
+  align-items: center;
+  padding: 20px 20px 0px 20px;
+  height: auto;
+  width: auto;
+  overflow-wrap: break-word;
+  top: 30px;
+  /* box-shadow: 0 0 3px 0 #3366cc; */
+  border-bottom: 2px solid #A188BE;
+  z-index: 1;
+  
+}
+.nav_list {
+  list-style-type: none;
+  margin-left: -30px;
+  padding-right: 10px;
+}
+.nav_list * {
+  display: inline;
+  color: #A188BE;
+  text-decoration: none;
+  margin: 10px 5px;
+}
+.longWord {
+  display: inline-block;
+  /* overflow-wrap: normal; */
+}
+.logo {
+  padding-left: 20px;
+}
+
+ /* FOR MAINVID PAGE STYLING */
+.mainVid {
+  /* top:150px; */
+  height: 100vh;
+  /* width: 100vh; */
+}
+
+ /* carousel styling */
+ .carouselContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+  width: 810px;
+  left: 10px;
+  right: 10px;
+  margin: 10px 30px 10px 10px;
+ }
+ .pos {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+ }
+ .caraViewport {
+  position: absolute;
+  height: 450px;
+  width: 800px;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+ }
+.slide {
+  position: absolute;
+  height: 450px;
+  width: 800px;
+  background-color: #61dafb;
+  list-style-type: none;
+  display: flex;
+}
+/*  */
+.section {
+  margin: 10px;
+}
+
+ /* diff carousel items */
+.col2 {
+  background-color: #553f6e;
+}
+.col3 {background-color: #a63838;}
+
+/* carousel btns */
+.btns {
+  top: 450px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.btnRecc {
+  margin: 0px 10px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #61dafb;
+  list-style-type: none;
+  background-clip: content-box;
+}

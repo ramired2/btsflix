@@ -1,6 +1,7 @@
 import './style/App.css';
 
 import Homepage from './pages/Homepage.js';
+import MainVid from './pages/MainVid.js';
 
 /* special library and its components to perform redirection easily */
 import {
@@ -15,6 +16,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Homepage/>} />
+          <Route exact path="/shows" element={<MainVid/>} />
         </Routes>
       </Router>
     </div>
