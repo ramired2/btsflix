@@ -1,0 +1,33 @@
+-- INSERTING YOUTUBE VIDEOS --
+
+-- Run BTS! 1-40
+INSERT INTO Videos (name, description, platformID, link, released)
+			VALUES	("Run BTS! 2015 EP.1 - Open", "", 1, "https://www.youtube.com/embed/5XisXVcbZEw", 08-02-2015),
+					("Run BTS! 2015 EP.2 - 최고의 남자", "", 1, "https://www.youtube.com/embed/fJa1DMVB0vc", 08-02-2015),
+					("Run BTS! 2015 EP.3 - 놀이공원", "desc", 1, "https://www.youtube.com/embed/HMG7jim0Bqc", 09-29-2015),
+					("Run BTS! - EP.4 [30초 게이트]", "desc", 1, "link", 10-13-2015),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released),
+					("vidName", "desc", 1, "link", released);
