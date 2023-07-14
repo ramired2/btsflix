@@ -14,7 +14,7 @@ function ReccsShows({shows}){
                             thumbnail
                         </div>
                     </li>
-                    <li className="slide col2 text" id="recc2">
+                    {/* <li className="slide col2 text" id="recc2">
                         <div className="details section">
                             show details
                         </div>
@@ -29,9 +29,9 @@ function ReccsShows({shows}){
                         <div className="thumbnail section">
                             thumbnail
                         </div>
-                    </li>
+                    </li> */}
                 </ol>
-                <ol className="btns">
+                {/* <ol className="btns">
                     <li className="btnRecc">
                         <a href="#recc1">1</a>
                     </li>
@@ -41,7 +41,7 @@ function ReccsShows({shows}){
                     <li className="btnRecc">
                         <a href="#recc3">3</a>
                     </li>
-                </ol>
+                </ol> */}
             </div>
 
         // </div>
