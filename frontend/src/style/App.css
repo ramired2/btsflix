@@ -598,11 +598,6 @@ body {
   justify-content: center;
 }
 .contentMainVid {
-  /* top: 300px;
-  margin-top: 90px;
-  display: inline-block;
-  position: relative;
-  left: 20px; */
 
   top: 120px;
   display: inline-block;
@@ -615,28 +610,17 @@ body {
 
  /* carousel styling */
  .carouselContainer {
-  /* position: relative; */
   position: relative;
     display: inline-flex;
-    /* align-items: center; */
-    /* justify-content: center; */
     height: 450px;
-    width: 810px;
-    /* left: 18%; */
-    /* right: 10px; */
-    margin: 10px 30px 10px 30px;
- }
- .pos {
-  position: absolute;
-  /* left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0; */
+    /* width: 90%; */
+    width: 700px;
+    margin: 0 auto;
  }
  .caraViewport {
   position: absolute;
   height: 450px;
-  width: 800px;
+  width: 100%;
   padding: 0px;
   margin: 0px;
   display: flex;
@@ -645,7 +629,7 @@ body {
 .slide {
   position: absolute;
   height: 450px;
-  width: 800px;
+  width: 100%;
   background-color: #61dafb;
   list-style-type: none;
   display: flex;
@@ -694,10 +678,28 @@ body {
 .scrolling {
   display: flex;
   margin-left: 17px;
-  margin-top: 40px;
+  margin-top: 10px;
+  margin-bottom: 7px;
 } 
+/* scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #31223c; 
+  border-radius: 3px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #A188BE; 
+  border-radius: 3px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9f42f1; 
+  border-radius: 3px;
 }
 .indivShow {
   display: block;
@@ -706,4 +708,30 @@ body {
     width: 170px;
     margin: 0px 3px;
     background-color: #61dafb;
+}
+.category {
+  text-align: left;
+  position: relative;
+  left: 60px;
+  width: fit-content;
+}
+
+/* modal styling */
+.modalContainer {
+  position: absolute;
+  top: -80px;
+  bottom: 20px;
+  left:20px;
+  right: 20px;
+  margin: 0 auto;
+  background-color: #0000ff97;
+  z-index: 5;
+  width: 90%;
+  /* height: 100%; */
+}
+.infoContainer {
+  /* position: absolute; */
+  width:700;
+  height: 400;
+  background-color: #231f24;
 }

@@ -4,7 +4,7 @@ function ReccsShows({shows}){
     
     return(
         // <div className="content">
-            <div className="pos">
+            <div className="carouselContainer">
                 <ol className="caraViewport">
                     <li className="slide col text" id="recc1">
                         <div className="details section">
