@@ -610,7 +610,7 @@ body {
 
  /* carousel styling */
  .carouselContainer {
-  position: relative;
+    position: relative;
     display: inline-flex;
     height: 450px;
     /* width: 90%; */
@@ -703,11 +703,14 @@ body {
 }
 .indivShow {
   display: block;
-    /* position: absolute; */
-    height: 200px;
-    width: 170px;
-    margin: 0px 3px;
-    background-color: #61dafb;
+  /* position: absolute; */
+  height: 200px;
+  width: 170px;
+  margin: 0px 3px;
+  background-color: #61dafb;
+}
+.indivShow:hover {
+  cursor: pointer;
 }
 .category {
   text-align: left;
@@ -719,19 +722,77 @@ body {
 /* modal styling */
 .modalContainer {
   position: absolute;
-  top: -80px;
-  bottom: 20px;
-  left:20px;
-  right: 20px;
+  top: -115px;
+  bottom: -10px;
+  left:10px;
+  right: 10px;
+  border-radius: 5px;
   margin: 0 auto;
-  background-color: #0000ff97;
+  background-color: #9f42f141;
   z-index: 5;
-  width: 90%;
-  /* height: 100%; */
+  width: 99%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.closeBtn {
+  position: absolute;
+  color: #231f24;
+  right: 10px;
+  top:10px;
+  padding: 7px 12px;
+  border-radius: 5px;
+  background-color: #9f42f1;
+  z-index: 5;
+}
+.closeBtn:hover {
+  cursor: pointer;
+  position: absolute;
+  color: #9f42f1;
+  padding: 7px 12px;
+  background-color: #231f24;
 }
 .infoContainer {
-  /* position: absolute; */
-  width:700;
-  height: 400;
+  position: absolute;
+  border-radius: 5px;
+  width:780px;
+  height: 100%;
   background-color: #231f24;
+  padding: 30px 20px;
+}
+.videoName {
+  position: relative;
+  top: 5%;
+}
+.infoList {
+  list-style-type: none;
+  display: inline-block;
+}
+.contentInfo {
+  display: flex;
+  justify-content: left;
+  width: 75%;
+  margin-top: 100px;
+}
+.desc {
+  display: inline-flex;
+  width:400px;
+  margin: 10px;
+  /* justify-content: left; */
+}
+.details {
+  /* justify-content: right; */
+  position: absolute;
+  width:200px;
+  right: 10%;
+  margin: 10px 0px 10px 10px;
+}
+.details .indivItem {
+  margin-bottom:35px;
+}
+.video {
+  margin-bottom: 30px;
+  border: 1px solid #9f42f1;
+  top: 10%;
+  position: relative;
 }
