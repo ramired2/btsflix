@@ -110,8 +110,8 @@
 		-- select all videos
         SELECT * FROM Videos;
         
-        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name, Videos.link, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
-		GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', ') as starring
+        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name as platformName, Videos.link, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
+		GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, IFNULL(GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', '), "") as starring
 			FROM Videos
             INNER JOIN Platforms ON Videos.platformID = Platforms.platformID
             INNER JOIN VideoTags ON Videos.videoID = VideoTags.videoID
