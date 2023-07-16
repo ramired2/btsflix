@@ -100,19 +100,34 @@
 	
     
 -- ----------------------------
+-- 		THUMBNAILS
+-- ----------------------------
+	-- INSERT
+    INSERT INTO Thumbnails (thumbnail) VALUES (:link);
+	-- SELECT
+    SELECT * FROM Thumbnails;
+    
+    -- UPDATE
+    UPDATE Thumbnails SET thumbnail = :newLink WHERE thumbnailID = :id;
+    
+    -- DELETE
+    DELETE FROM Thumbnails WHERE thumbnailID = :id
+    
+-- ----------------------------
 -- 		VIDEOS
 -- ----------------------------
 	-- INSERT
-		INSERT INTO Videos (name, description, platformID, link)
-			VALUES	(:vidName, :desc, :platformID, :link);
+		INSERT INTO Videos (name, description, platformID, link, thumbnail)
+			VALUES	(:vidName, :desc, :platformID, :link, :thumbnailLink);
 
 	-- SELECT
 		-- select all videos
         SELECT * FROM Videos;
         
-        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name as platformName, Videos.link, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
+        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name as platformName, Videos.link, Thumbnails.thumbnail, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
 		GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, IFNULL(GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', '), "") as starring
 			FROM Videos
+            INNER JOIN Thumbnails ON Videos.thumbnailID = Thumbnails.thumbnailID
             INNER JOIN Platforms ON Videos.platformID = Platforms.platformID
             INNER JOIN VideoTags ON Videos.videoID = VideoTags.videoID
             LEFT JOIN Starring ON Videos.videoID = Starring.videoID
@@ -122,9 +137,10 @@
             ORDER BY Videos.name;
         
         -- select videos by platform
-        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name, Videos.link, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
+        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name, Videos.link, Thumbnails.thumbnail, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
         GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', ') as starring
 			FROM Videos
+            INNER JOIN Thumbnails ON Videos.thumbnailID = Thumbnails.thumbnailID
             INNER JOIN Platforms ON Videos.platformID = Platforms.platformID
             INNER JOIN VideoTags ON Videos.videoID = VideoTags.videoID
             LEFT JOIN Starring ON Videos.videoID = Starring.videoID
@@ -135,9 +151,10 @@
             ORDER BY Videos.name;
         
         -- select videos by tags (act like categories)
-        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Videos.link, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
+        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Videos.link, Thumbnails.thumbnail, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
         GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', ') as starring
 			FROM Videos
+            INNER JOIN Thumbnails ON Videos.thumbnailID = Thumbnails.thumbnailID
             INNER JOIN VideoTags ON Videos.videoID = VideoTags.videoID
             LEFT JOIN Starring ON Videos.videoID = Starring.videoID
             LEFT JOIN Members ON Starring.artistID = Members.memberID
@@ -147,9 +164,10 @@
             ORDER BY Videos.name;
         
         -- select all videos that contain the phrase '' in the name or in the tags // helpful for gen search 
-        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Videos.link, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
+        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Videos.link, Thumbnails.thumbnail, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
         GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', ') as starring
 			FROM Videos
+            INNER JOIN Thumbnails ON Videos.thumbnailID = Thumbnails.thumbnailID
             INNER JOIN VideoTags ON Videos.videoID = VideoTags.videoID
             LEFT JOIN Starring ON Videos.videoID = Starring.videoID
             LEFT JOIN Members ON Starring.artistID = Members.memberID
@@ -159,12 +177,13 @@
             ORDER BY Videos.name;
         
         -- select videos that contain specific member // NOT FULL STARRING RETURNED 
-        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Videos.link, Videos.videoID as videoContained, 
+        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Videos.link, Thumbnails.thumbnail, Videos.videoID as videoContained, 
         GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, 
 				(SELECT GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', ') as starring 
 				FROM MEMBERS 
                 LEFT JOIN Starring ON Starring.artistID = Members.memberID 
                 INNER JOIN Videos ON Starring.videoID = Videos.videoID 
+                INNER JOIN Thumbnails ON Videos.thumbnailID = Thumbnails.thumbnailID
                 WHERE Videos.videoID = videoContained) as starred
 			FROM Videos
             INNER JOIN VideoTags ON Videos.videoID = VideoTags.videoID
@@ -176,9 +195,10 @@
             ORDER BY Videos.name;
         
         -- select four random videos for opening page by videoID
-        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name, Videos.link, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
+        SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name, Videos.link, Thumbnails.thumbnail, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
 		GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', ') as starring
 			FROM Videos
+            INNER JOIN Thumbnails ON Videos.thumbnailID = Thumbnails.thumbnailID
             INNER JOIN Platforms ON Videos.platformID = Platforms.platformID
             INNER JOIN VideoTags ON Videos.videoID = VideoTags.videoID
             LEFT JOIN Starring ON Videos.videoID = Starring.videoID
@@ -206,7 +226,7 @@
 			VALUES	(:tag)
 
 	-- SELECT
-		SELECT * FROM Tags
+		SELECT * FROM Tags ORDER BY tag;
             
 	-- UPDATE
 		UPDATE Tags SET tag = :tag;

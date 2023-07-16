@@ -4,6 +4,7 @@ SET AUTOCOMMIT = 0;
 DROP TABLE IF EXISTS Members;
 DROP TABLE IF EXISTS Albums;
 DROP TABLE IF EXISTS Starring;
+DROP TABLE IF EXISTS Thumbnails;
 DROP TABLE IF EXISTS Videos;
 DROP TABLE IF EXISTS Platforms;
 DROP TABLE IF EXISTS Tags;
@@ -38,6 +39,12 @@ CREATE TABLE Starring (
     FOREIGN KEY (artistID) REFERENCES Members(memberID) ON UPDATE CASCADE
 );
 
+CREATE TABLE Thumbnails (
+	thumbnailID INT AUTO_INCREMENT NOT NULL,
+    thumbnail VARCHAR(255),
+    PRIMARY KEY(thumbnailID)
+    );
+
 CREATE TABLE Videos (
 	videoID INT AUTO_INCREMENT NOT NULL,
     name VARCHAR(200),
@@ -45,7 +52,9 @@ CREATE TABLE Videos (
     platformID INT NOT NULL,
     link VARCHAR(255),
     released date,
+    thumbnailID int,
     PRIMARY KEY (videoID),
+    FOREIGN KEY (thumbnailID) REFERENCES Thumbnails(thumbnailID) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (platformID) REFERENCES Platforms(platformID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -98,14 +107,20 @@ INSERT INTO Platforms (name, numVideos)
 VALUES	("Youtube", 3),
 		("Weverse", 0);
         
+INSERT INTO Thumbnails (thumbnail)
+VALUES	("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS8X6EjlPz3Xf5qI9VBS5jUGum1uJtcwqZSS_qXRoY8M8ZmDE-f"),
+		("https://static.wikia.nocookie.net/the-bangtan-boys/images/d/d9/RUN_BTS_Logo_S3.png/revision/latest?cb=20190525022425"),
+        ("https://static.wikia.nocookie.net/the-bangtan-boys/images/8/88/Eat_Jin_logo.jpg/revision/latest?cb=20171025042518");
+        
 INSERT INTO Videos (name,
 					description,
 					platformID,
-					link)
-VALUES	("Run BTS! 2015 EP.1 - Open", "First episode of Run BTS!", 1, "https://www.youtube.com/watch?v=5XisXVcbZEw&list=PL5hrGMysD_Gut5B6Mms1bpkv44LoOwEHz"),
-		("Run BTS! 2015 EP.2 - 최고의 남자", "", 1, "https://www.youtube.com/watch?v=fJa1DMVB0vc&list=PL5hrGMysD_Gut5B6Mms1bpkv44LoOwEHz&index=2"),
-        ("Run BTS! 2015 EP.3 - Theme Park", "BTS goes to a themepark", 1, "https://www.youtube.com/watch?v=HMG7jim0Bqc&list=PL5hrGMysD_Gut5B6Mms1bpkv44LoOwEHz&index=3"),
-        ("161227 밥 먹는 김석진", "", 1, "https://www.youtube.com/watch?v=7fszwWLFAng");
+					link,
+                    thumbnailID)
+VALUES	("Run BTS! 2015 EP.1 - Open", "First episode of Run BTS!", 1, "https://www.youtube.com/embed/5XisXVcbZEw", 1),
+		("Run BTS! 2015 EP.2 - 최고의 남자", "", 1, "https://www.youtube.com/embed/fJa1DMVB0vc", 1),
+        ("Run BTS! 2015 EP.3 - Theme Park", "BTS goes to a themepark", 1, "https://www.youtube.com/embed/HMG7jim0Bqc", 1),
+        ("161227 밥 먹는 김석진", "", 1, "https://www.youtube.com/embed/7fszwWLFAng", 3);
         
 INSERT INTO Tags (tag)
 VALUES	("Run BTS!"),
@@ -130,6 +145,7 @@ VALUES	( 1, 3),
         ( 2, 6),
         ( 2, 1),
         ( 4, 2);
+    
 
 SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
