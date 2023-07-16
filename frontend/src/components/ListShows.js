@@ -4,11 +4,20 @@ import axios from 'axios';
 
 function ListShows({category}){
     const [Hover, setHover] = useState(false);
-    const [shows, setShow] = useState([])
+    const [shows, setShow] = useState([]);
+    const [remainder, setRemainder] = useState([]);
 
     useEffect(() => {
         getShows();
+        // settingRemainEps();
       }, []);
+
+    //   const settingRemainEps = () => {
+    //     let min = 1
+    //     shows.map((indiv, index) => {min < index? setRemainder([...remainder, indiv]) :""}
+    //     )
+        
+    // }
 
       const getShows = async() => {
         const res = await axios (`http://localhost:5000/api/showsFromCategory`, {
@@ -44,6 +53,7 @@ function ListShows({category}){
     </div>
     }
     
+
     return(
         <div>
             <h3 className="text category">{category}</h3>
@@ -53,7 +63,6 @@ function ListShows({category}){
                     {shows != null? shows.map ((show, idx) => 
                         <div className="indivShow" onClick={() => {setHover(show);}}>
                             <img className="thumbnail" src={show.thumbnail} alt="show thumbnail" />
-                            {/* {console.log("hovered on ", Hover)} */}
                         </div>): "Loading..."}
                 </div>
             </div>
