@@ -707,8 +707,14 @@ body {
   height: 200px;
   width: 170px;
   margin: 0px 3px;
-  background-color: #61dafb;
+  background-color: transparent;
+  overflow: hidden;
 }
+.thumbnail {
+  object-fit: contain;
+  width: 170px;
+}
+
 .indivShow:hover {
   cursor: pointer;
 }
@@ -791,7 +797,7 @@ body {
 .video {
   margin-bottom: 30px;
   border: 1px solid #9f42f1;
-  top: 10%;
+  top: 7%;
   position: relative;
 }
 

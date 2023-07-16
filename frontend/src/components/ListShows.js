@@ -1,8 +1,27 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
+import axios from 'axios';
 // import ModalShow from "./ModalShow";
 
-function ListShows({shows, category}){
+function ListShows({category}){
     const [Hover, setHover] = useState(false);
+    const [shows, setShow] = useState([])
+
+    useEffect(() => {
+        getShows();
+      }, []);
+
+      const getShows = async() => {
+        const res = await axios (`http://localhost:5000/api/showsFromCategory`, {
+            headers: { 'Content-Type': 'application/json'},
+            method: "GET",
+            params: {category: category}
+            })
+            .then(res => {
+                console.log(res.data)
+                setShow(res.data)
+            })
+            .catch(err => console.log(err));
+        };
 
     const modal = () => {
         return <div className="modalContainer" >
@@ -31,14 +50,11 @@ function ListShows({shows, category}){
 
             <div className="showList">
                 <div className="scrolling">
-                    {shows.map ((show, idx) => 
-                        <div className="indivShow" onClick={() => {setHover(show);}}
-                                                //    onMouseLeave={() => setHover(false)}
-                                                   >
-                            {console.log("hovered on ", Hover)}
-                            {/* {Hover != false? <ModalShow info={Hover}></ModalShow>:""} */}
-                        </div>)}
-                        {/* {Hover != false? <ModalShow info={Hover}></ModalShow>:""} */}
+                    {shows != null? shows.map ((show, idx) => 
+                        <div className="indivShow" onClick={() => {setHover(show);}}>
+                            <img className="thumbnail" src={show.thumbnail} alt="show thumbnail" />
+                            {/* {console.log("hovered on ", Hover)} */}
+                        </div>): "Loading..."}
                 </div>
             </div>
             {Hover != false? modal():""}
