@@ -5,8 +5,7 @@ function ListShows({shows, category}){
     const [Hover, setHover] = useState(false);
 
     const modal = () => {
-        return <div className="modalContainer" 
-        >
+        return <div className="modalContainer" >
             <div className="closeBtn" onClick={() => setHover(false)}>x</div>
         <div className="infoContainer">
             <h1 className="videoName">{Hover.name}</h1>

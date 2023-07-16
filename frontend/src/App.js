@@ -2,7 +2,7 @@ import './style/App.css';
 
 import Homepage from './pages/Homepage.js';
 import MainVid from './pages/MainVid.js';
-import CategoriesVid from './components/CategoriesVid.js'
+import SearchVid from './pages/SearchVid';
 
 /* special library and its components to perform redirection easily */
 import {
@@ -11,6 +11,8 @@ import {
   Routes
 } from "react-router-dom"; // more about that here: https://www.pluralsight.com/guides/how-to-set-react-router-default-route-redirect-to-home
 
+// when add search: props -- media(aka tv, mags, music), and search word
+
 function App() {
   return (
     <div className="App">
@@ -18,7 +20,8 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Homepage/>} />
           <Route exact path="/shows" element={<MainVid/>} />
-          {/* <Route exact path="/categories" element={<CategoriesVid/>} /> */}
+          <Route exact path="/search/:searching" element={<SearchVid />} />
+          {/* <Route path="*" element={<404Page />} /> */}
         </Routes>
       </Router>
     </div>

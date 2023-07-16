@@ -819,3 +819,10 @@ body {
   display: inline-flex;
   width: 80px;
 }
+
+.textbox {
+  color: #231f24;
+  background-color: #9f42f1;
+  border: 1px solid #231f24;
+  border-radius: 5px;
+}

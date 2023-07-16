@@ -3,6 +3,15 @@ import CategoriesVid from "../components/CategoriesVid.js";
 
 function Navbar(props) {  
   const [Hover, setHover] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const modal = () => {
+    return <div>
+              {show == false? <li id="nav_item" onMouseEnter={() => setShow(true)}> search</li>
+              :<input type="text" class="textbox" onMouseLeave={() => setShow(false)} placeholder="type here..." />}
+
+          </div>
+  }
   
     return (
             <div className="nav">
@@ -20,7 +29,8 @@ function Navbar(props) {
                     {Hover == true? <div onMouseLeave={() => setHover(false)}><CategoriesVid ></CategoriesVid></div> :""}
                     
                   </div>
-                  <li id="nav_item"><a href="/ships">search</a></li>
+                  {modal()}
+                  
                   </div>
                 </ul>
               </div>
