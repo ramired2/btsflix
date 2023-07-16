@@ -31,7 +31,6 @@ const Homepage = () => {
       <div className="house">
         <div className="houseDetails"></div>
         <div className="houseWalls"></div>
-        {/* <div className="wallsRight"></div> */}
       </div>
     </div>
     
