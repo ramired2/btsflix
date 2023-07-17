@@ -22,6 +22,7 @@ function Navbar(props) {
               <div className="navLinks">
                 <ul className="nav_list">
                   <div className='navList'>
+                  <a href='/shows'><li id="nav_item">Videos</li></a>
                   {/* <li id="nav_item"><a href="/">Home</a></li> */}
                   <div onMouseEnter={() => setHover(true)}>
                     <li id="nav_item" className="categoriesHover">Categories</li>
