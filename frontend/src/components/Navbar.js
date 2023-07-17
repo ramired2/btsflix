@@ -1,14 +1,20 @@
 import React, {useState, useEffect, Fragment} from 'react';
 import CategoriesVid from "../components/CategoriesVid.js";
+import { Link } from "react-router-dom";
 
 function Navbar(props) {  
   const [Hover, setHover] = useState(false);
   const [show, setShow] = useState(false);
+  const [search, setSearch] = useState("");
 
   const modal = () => {
     return <div>
               {show == false? <li id="nav_item" onMouseEnter={() => setShow(true)}> search</li>
-              :<input type="text" class="textbox" onMouseLeave={() => setShow(false)} placeholder="type here..." />}
+              :<div onMouseLeave={() => setShow(false)} >
+                <input type="text" class="textbox" placeholder="type here..." value={search} onChange={(e) => setSearch(e.target.value)}/>
+                {console.log(search)}
+                <Link to='/search' state={{type: "search", search: search}}><button>Go</button></Link>
+              </div>}
 
           </div>
   }

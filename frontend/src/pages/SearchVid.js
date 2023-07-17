@@ -5,21 +5,46 @@ import Navbar from "../components/Navbar";
 
 const SearchVid = (props) => {
   const location = useLocation()
-  const type = location.state.type
-  const search = location.state.search
-  const [shows, setShow] = useState([]);
+  const [type, setType] = useState(location.state.type);
+  // let type = location.state.type
+  const [search, setSearch] = useState(location.state.search);
+  // let search = location.state.search
+  const [shows, setShow] = useState(null);
   const [Hover, setHover] = useState(false);
+
+  // onChange={(e) => whichGet()}
 
   console.log(type, search)
 
   useEffect(() => {
+    console.log("in useEffect")
     if (type == "category") {
+      console.log("category search")
       getShows();
+    }
+    else { 
+      // (type == "search")
+      // only goes here on first page here -- need to fix when user have another search
+      console.log("general search")
+      genSearch();
     }
 
 
   }, []);
 
+
+  const whichGet = () => {
+    if (type == "category") {
+      console.log("category search")
+      getShows();
+    }
+    else { 
+      // (type == "search")
+      // only goes here on first page here -- need to fix when user have another search
+      console.log("general search")
+      genSearch();
+    }
+  }
   
 
   const getShows = async() => {
@@ -34,6 +59,19 @@ const SearchVid = (props) => {
         })
         .catch(err => console.log(err));
     };
+
+    const genSearch = async() => {
+      const res = await axios (`http://localhost:5000/api/genSearch`, {
+          headers: { 'Content-Type': 'application/json'},
+          method: "GET",
+          params: {search: search}
+          })
+          .then(res => {
+              console.log(res.data)
+              setShow(res.data)
+          })
+          .catch(err => console.log(err));
+      };
 
     const modal = () => {
       return <div className="modalContainer searchModal" >
@@ -61,12 +99,14 @@ const SearchVid = (props) => {
       <Navbar></Navbar>
 
       <div className='searchContainer'>
-        <h1 className="text title">SEARCH</h1>
+        <h1 className="text title" onChange={(e) => whichGet()}>Results for: {search}</h1>
         <div className='listShows'>
-          {shows != null? shows.map ((show, idx) => 
-                          <div className="indivShow" onClick={() => {setHover(show);}}>
-                              <img className="thumbnail" src={show.thumbnail} alt="show thumbnail" />
-                          </div>): "Loading..."}
+          {shows? shows == ""? "No Results":
+                                    shows.map ((show, idx) => 
+                                      <div className="indivShow" onClick={() => {setHover(show);}}>
+                                          <img className="thumbnail" src={show.thumbnail} alt="show thumbnail" />
+                                      </div>)
+                  : "Loading..."}
                           
         </div>
         {Hover != false? modal():""}

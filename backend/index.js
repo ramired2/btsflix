@@ -68,6 +68,32 @@ app.get("/api/showsFromCategory", (req, res) => {
     })
 });
 
+app.get("/api/genSearch", (req, res) => {
+    const search = req.query.search;
+    // console.log(category)
+    // console.log(req)
+
+    const query = `SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Videos.link, Thumbnails.thumbnail, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
+                    GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', ') as starring
+                        FROM Videos
+                        INNER JOIN Thumbnails ON Videos.thumbnailID = Thumbnails.thumbnailID
+                        INNER JOIN VideoTags ON Videos.videoID = VideoTags.videoID
+                        LEFT JOIN Starring ON Videos.videoID = Starring.videoID
+                        LEFT JOIN Members ON Starring.artistID = Members.memberID
+                        INNER JOIN Tags ON VideoTags.tagID = Tags.tagID
+                        WHERE Videos.name LIKE "%` + search + `%" OR Tags.tag LIKE "%` + search + `%" OR Members.alias LIKE "%` + search + `%"
+                        GROUP BY Videos.videoID
+                        ORDER BY Videos.name;`
+
+                        console.log(query)
+
+    db.query(query, (err, result) => {
+        if (err) throw err;
+        // console.log(result);
+        res.send(result)
+    })
+});
+
 app.listen(5000, () => {
     console.log("running on port 5000");
 });
