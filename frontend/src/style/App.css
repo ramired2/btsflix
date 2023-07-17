@@ -586,7 +586,7 @@ body {
  /* FOR MAINVID PAGE STYLING */
 .mainVid {
   /* top:150px; */
-  /* height: 100vh; */
+  /* height: -webkit-fill-available; */
   width: -webkit-fill-available;
   position: relative;
   left: 0;
@@ -831,4 +831,32 @@ body {
   background-color: #9f42f1;
   border: 1px solid #231f24;
   border-radius: 5px;
+}
+
+/* for search */
+.listShows {
+  display: inline-flex;
+  position: relative;
+  top:90px;
+  height: 99%;
+  /* align-items: ; */
+}
+.searchContent {
+  height: 100vh;
+  width: -webkit-fill-available;
+  margin: 0 auto;
+  padding: 0;
+}
+.searchContainer {
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+}
+/* title search */
+.title {
+  position: relative;
+  top:90px;
+  display: block;
+}
+.modalContainer.searchModal {
+  top:0;
 }

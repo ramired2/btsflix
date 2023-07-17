@@ -20,7 +20,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Homepage/>} />
           <Route exact path="/shows" element={<MainVid/>} />
-          <Route exact path="/search/:searching" element={<SearchVid />} />
+          <Route exact path="/search" element={<SearchVid />} />
           {/* <Route path="*" element={<404Page />} /> */}
         </Routes>
       </Router>

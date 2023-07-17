@@ -34,6 +34,16 @@ app.get("/api/getMembers", (req, res) => {
     });
 });
 
+app.get("/api/getTags", (req, res) => {
+    const query = `SELECT * FROM Tags ORDER BY tag;`
+
+    db.query(query, (err, result) => {
+        if (err) throw err;
+        // console.log(result);
+        res.send(result)
+    });
+});
+
 app.get("/api/showsFromCategory", (req, res) => {
     const category = req.query.category;
     // console.log(category)
