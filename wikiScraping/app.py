@@ -13,7 +13,7 @@ import json
 def hello_world():
     return "<p>hi</p>"
 
-# webscrape wiki for bts run episode details  // Run_BTS
+# webscrape wiki for bts run episode details  // "Run_BTS"
 # @app.route("/videos/<URL>")
 def wikiScrapeEpisodes(URL):
     infos = []
@@ -63,13 +63,30 @@ def wikiScrapeEpisodes(URL):
             # [16] - [157] refs need to b removed
 
             # if description
-            if len(row) == 1:
-                infos.append({"name":title+temp[1], "description":"MC: "+temp[2]+'Teams: '+temp[3]+row[0], "released":temp[4]})
+            if len(row) == 1: #name, description, platformID, link, released, thumbnail
+                date = temp[4]
+                date = date.replace("(", "")
+                date = date.replace(")", "")
+
+                thumbnail = 2
+
+                if temp[0] != 'SPE':
+                    if int(temp[0]) <= 58:
+                        thumbnail = 1
+
+                infos.append({"name":title+temp[1], "description":"MC: "+temp[2]+'\nTeams: '+temp[3]+ '\n' + row[0], "platformID": 1, "link": "https://www.youtube.com/embed/", "released":date, "thumbnail":thumbnail})
 
         # print(json.dumps(infos, indent=4))
+
+    jsonStr = json.dumps(infos, indent=4)
+    jsonFile = open("showInfo.json", "w")
+    jsonFile.write(jsonStr)
+    jsonFile.close()
         
 
     return (json.dumps(infos, indent=4))
+
+wikiScrapeEpisodes("Run_BTS")
 
 # if __name__ == "__main__":
 #     app.run(debug=True)

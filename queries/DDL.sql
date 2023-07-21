@@ -67,7 +67,7 @@ CREATE TABLE Platforms (
 
 CREATE TABLE Tags (
     tagID INT AUTO_INCREMENT NOT NULL,
-    tag VARCHAR (45) NOT NULL,
+    tag VARCHAR (45) NOT NULL UNIQUE,
     PRIMARY KEY (tagID)
 );
 
@@ -109,32 +109,60 @@ VALUES	("Youtube", 3),
         
 INSERT INTO Thumbnails (thumbnail)
 VALUES	("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS8X6EjlPz3Xf5qI9VBS5jUGum1uJtcwqZSS_qXRoY8M8ZmDE-f"),
-		("https://static.wikia.nocookie.net/the-bangtan-boys/images/d/d9/RUN_BTS_Logo_S3.png/revision/latest?cb=20190525022425"),
-        ("https://static.wikia.nocookie.net/the-bangtan-boys/images/8/88/Eat_Jin_logo.jpg/revision/latest?cb=20171025042518");
+		("https://static.wikia.nocookie.net/the-bangtan-boys/images/d/d9/RUN_BTS_Logo_S3.png/revision/latest?cb=20190525022425");
         
 INSERT INTO Videos (name,
 					description,
 					platformID,
 					link,
+                    released,
                     thumbnailID)
-VALUES	("Run BTS! 2015 EP.1 - Open", "First episode of Run BTS!", 1, "https://www.youtube.com/embed/5XisXVcbZEw", 1),
-		("Run BTS! 2015 EP.2 - 최고의 남자", "", 1, "https://www.youtube.com/embed/fJa1DMVB0vc", 1),
-        ("Run BTS! 2015 EP.3 - Theme Park", "BTS goes to a themepark", 1, "https://www.youtube.com/embed/HMG7jim0Bqc", 1),
-        ("161227 밥 먹는 김석진", "", 1, "https://www.youtube.com/embed/7fszwWLFAng", 3);
+VALUES	(
+        "Run BTS! EP.1: Open",
+        "MC: none\nTeams: none\nBTS present a theme song for V app introduce the new platform and themselves, and discuss their hopes for the show",
+        1,
+        "https://www.youtube.com/embed/5XisXVcbZEw",
+        "2015-08-01",
+        1
+    ),
+    (
+        "Run BTS! EP.2: The Greatest Man",
+        "MC: none\nTeams: none\nBTS participate in a three-round competition to determine the Best Man among them. They compete in a patience test to see who can hold water in their mouth the longest without spitting it out while being tickled, a sexy lips game to see who has the widest mouth, and a cushion version of musical chairs. Jungkook wins two of the three rounds and receives the Best Man badge as his prize",
+        1,
+        "https://www.youtube.com/embed/fJa1DMVB0vc",
+        "2015-08-02",
+        1
+    ),
+    (
+        "Run BTS! EP.3: Theme Park",
+        "MC: none\nTeams: none\nBTS go to an amusement park and complete challenges while on rides",
+        1,
+        "https://www.youtube.com/embed/HMG7jim0Bqc",
+        "2015-08-18",
+        1
+    ),
+    (
+        "Run BTS! EP.4: 30-second Mission",
+        "MC: none\nTeams: none\nBTS play three games in a swimming pool: Jenga (using chopsticks), paper crane unfolding, and emptying half a bottle of Coca-Cola into an empty one. Jimin successfully completes all challenges and is selected as the day's MVP. V, Suga, and Jin each receive penalities and have to drink garlic juice",
+        1,
+        "https://www.youtube.com/embed/LwOKT0qcX8I",
+        "2015-09-15",
+        1
+    );
         
 INSERT INTO Tags (tag)
 VALUES	("Run BTS!"),
-		("Live"),
-        ("Comedy"),
-        ("Thriller"),
-        ("EAT Jin");
+		("introduction"),
+        ("indoor"),
+        ("games"),
+        ("theme park");
         
 INSERT INTO VideoTags (videoID, tagID)
 VALUES	(1, 1),
-		(1, 3),
+		(1, 2),
 		(2, 3),
-        (3, 4),
-        (4, 5);
+        (3, 5),
+        (4, 4);
         
 INSERT INTO Starring (videoID, artistID)
 VALUES	( 1, 3),
