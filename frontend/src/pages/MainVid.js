@@ -23,9 +23,9 @@ const MainVid = () => {
         
         <div className="contentMainVid">
             <ReccsShows shows = {recc}></ReccsShows>
-            <ListShows category={"Comedy"}></ListShows>
-            <ListShows category={"Run BTS!"}></ListShows>
-            <ListShows category={"EAT Jin"}></ListShows>
+            <ListShows category={"Games"}></ListShows>
+            <ListShows category={"Spy"}></ListShows>
+            <ListShows category={"Scavenger Hunt"}></ListShows>
         </div>
       
     </div>
