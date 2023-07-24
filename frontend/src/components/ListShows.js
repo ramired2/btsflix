@@ -63,6 +63,7 @@ function ListShows({category}){
                 <div className="scrolling">
                     {shows != null? shows.map ((show, idx) => 
                         <div className="indivShow" onClick={() => {setHover(show);}}>
+                            <p className='text showName'>{show.name}</p>
                             <img className="thumbnail" src={show.thumbnail} alt="show thumbnail" />
                         </div>): "Loading..."}
                 </div>
