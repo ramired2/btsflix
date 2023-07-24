@@ -129,36 +129,29 @@ app.get("/api/insertStarring/:min/:max", (req, res) => {
     
 });
 
-app.get("/api/assignCategory/:min/:max", (req, res) => {
+app.get("/api/assignCategory/:min/:max/:tagID", (req, res) => {
     let min = req.params.min
     let max = req.params.max
+    let tagID = req.params.tagID
 
     console.log("before loop")
     console.log(min)
     console.log(max)
+    console.log(tagID)
 
     for(let i = min; i <= max; i++) {
         console.log("in for loop");
         console.log(i);
         
         (function() {
-            const query = `INSERT INTO Starring (videoID, artistID)
-                    VALUES	(?, 1),
-                            (?, 2),
-                            (?, 3),
-                            (?, 4),
-                            (?, 5),
-                            (?, 6),
-                            (?, 7);`
+            const query = `INSERT INTO VideoTags (videoID, tagID)
+                            VALUES  (?, ?)`
 
-             db.query(query, [i, i, i, i, i, i, i], (err, result) => {
+             db.query(query, [i, tagID], (err, result) => {
                 if (err) throw err;
                 console.log("successful insertion");
-                // res.send();
             });
         })(i)
-           
-    // res.send("finished loop");
     }
     
 });
