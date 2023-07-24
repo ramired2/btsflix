@@ -5,10 +5,11 @@ import Navbar from "../components/Navbar";
 
 const SearchVid = (props) => {
   const location = useLocation()
-  const [type, setType] = useState(location.state.type);
-  // let type = location.state.type
-  const [search, setSearch] = useState(location.state.search);
-  // let search = location.state.search
+  const [params, setParams] = useState(useParams());
+
+  const [type, setType] = useState(params.type);
+  const [search, setSearch] = useState(params.search);
+
   const [shows, setShow] = useState(null);
   const [Hover, setHover] = useState(false);
 
@@ -75,8 +76,8 @@ const SearchVid = (props) => {
 
     const modal = () => {
       return <div className="modalContainer searchModal" >
-          <div className="closeBtn" onClick={() => setHover(false)}>x</div>
       <div className="infoContainer">
+      <div className="closeBtn" onClick={() => setHover(false)}>x</div>
           <h1 className="videoName">{Hover.name}</h1>
           <iframe width="79%" height="315" className="video"
               src={Hover.link}>
@@ -104,6 +105,7 @@ const SearchVid = (props) => {
           {shows? shows == ""? "No Results":
                                     shows.map ((show, idx) => 
                                       <div className="indivShow" onClick={() => {setHover(show);}}>
+                                        <p className='text showName'>{show.name}</p>
                                           <img className="thumbnail" src={show.thumbnail} alt="show thumbnail" />
                                       </div>)
                   : "Loading..."}

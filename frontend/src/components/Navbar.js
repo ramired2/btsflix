@@ -8,12 +8,13 @@ function Navbar(props) {
   const [search, setSearch] = useState("");
 
   const modal = () => {
+    let link = "/search/search/" + search
     return <div>
               {show == false? <li id="nav_item" onMouseEnter={() => setShow(true)}> search</li>
               :<div onMouseLeave={() => setShow(false)} >
                 <input type="text" class="textbox" placeholder="type here..." value={search} onChange={(e) => setSearch(e.target.value)}/>
                 {console.log(search)}
-                <Link to='/search' state={{type: "search", search: search}}><button>Go</button></Link>
+                <a href={link}><button>Go</button></a>
               </div>}
 
           </div>

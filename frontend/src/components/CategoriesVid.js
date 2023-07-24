@@ -26,9 +26,7 @@ function CategoriesVid(){
     <div className="categoriesModal">
         {tags.map((tag) => 
             <ol className="listtags">
-                {/* <li value={tag.tagID}>{tag.tag}</li> */}
-                {/* <a href={"/search/"+tag.tag}><li value={tag.tagID}>{tag.tag}</li></a> */}
-                <Link to='/search' state={{type: "category", search: tag.tag}}><li value={tag.tagID}>{tag.tag}</li></Link>
+                <a href={"/search/category/"+tag.tag}><li value={tag.tagID}>{tag.tag}</li></a>
             </ol>)}
         
     </div>

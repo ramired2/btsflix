@@ -34,8 +34,9 @@ function ListShows({category}){
 
     const modal = () => {
         return <div className="modalContainer" >
-            <div className="closeBtn" onClick={() => setHover(false)}>x</div>
+            {/* <div className="closeBtn mainCloseBtn" onClick={() => setHover(false)}>x</div> */}
         <div className="infoContainer">
+        <div className="closeBtn mainCloseBtn" onClick={() => setHover(false)}>x</div>
             <h1 className="videoName">{Hover.name}</h1>
             <iframe width="79%" height="315" className="video"
                 src={Hover.link}>
@@ -55,7 +56,7 @@ function ListShows({category}){
     
 
     return(
-        <div>
+        <div className="listShowBG">
             <h3 className="text category">{category}</h3>
 
             <div className="showList">

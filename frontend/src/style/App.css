@@ -665,6 +665,10 @@ body {
   background-clip: content-box;
 }
 
+.listShowBG {
+  /* background-color: #210e2f91; */
+  margin-bottom: 50px;
+}
 /* for list shows */
 .showList {
   display: flex;
@@ -674,7 +678,7 @@ body {
   /* right: 100px; */
   width: 90%;
   position: relative;
-  padding: 10px;
+  padding: 0 10px;
   border-radius: 3px;
   background-color: #210e2f3a;
 } 
@@ -705,13 +709,20 @@ body {
   border-radius: 3px;
 }
 .indivShow {
-  display: block;
+  display: inline-block;
   /* position: absolute; */
-  height: 200px;
+  height: 220px;
   width: 170px;
   margin: 0px 3px;
   background-color: transparent;
   overflow: hidden;
+}
+.showName {
+  text-align: center;
+  top: 5px;
+  position: absolute;
+  width: 160px;
+  font-weight: 500;
 }
 .thumbnail {
   object-fit: contain;
@@ -726,6 +737,8 @@ body {
   position: relative;
   left: 60px;
   width: fit-content;
+  padding: 0 10px;
+  /* background-color: #210e2f91; */
 }
 
 /* modal styling */
@@ -747,8 +760,8 @@ body {
 .closeBtn {
   position: absolute;
   color: #231f24;
-  right: 10px;
-  top:10px;
+  right: 3%;
+  top: 2%;
   padding: 7px 12px;
   border-radius: 5px;
   background-color: #9f42f1;
@@ -776,6 +789,7 @@ body {
 .infoList {
   list-style-type: none;
   display: inline-block;
+  text-align: left;
 }
 .contentInfo {
   display: flex;
@@ -813,7 +827,7 @@ body {
   background-color: #231f24;
   z-index: 6;
   top: 100%;
-  left: -22%;
+  left: -5%;
   text-align: left;
   border-radius: 3px;
 }
@@ -825,8 +839,12 @@ body {
 
 /* categoriesVid */
 .listtags {
-  display: inline-flex;
-  width: 80px;
+  text-align: center;
+    display: inline-flex;
+    margin: 6px;
+    padding: 5px;
+    /* width: min-content; */
+    background: #210e2f29;
 }
 
 .textbox {
@@ -838,10 +856,11 @@ body {
 
 /* for search */
 .listShows {
-  display: inline-flex;
+  display: inline-block;
   position: relative;
   top:90px;
-  /* height: 99%; */
+  text-align: left;
+  top: 90px;
   padding: 20px;
   border-radius: 3px;
   background-color: #210e2f89;
@@ -849,12 +868,13 @@ body {
 }
 .searchContent {
   height: 100vh;
-  width: -webkit-fill-available;
+  width: 99%;
   margin: 0 auto;
   padding: 0;
 }
 .searchContainer {
-  width: -webkit-fill-available;
+  display: inline-block;
+  width: 100%;
   height: -webkit-fill-available;
 }
 /* title search */

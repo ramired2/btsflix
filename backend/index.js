@@ -129,6 +129,40 @@ app.get("/api/insertStarring/:min/:max", (req, res) => {
     
 });
 
+app.get("/api/assignCategory/:min/:max", (req, res) => {
+    let min = req.params.min
+    let max = req.params.max
+
+    console.log("before loop")
+    console.log(min)
+    console.log(max)
+
+    for(let i = min; i <= max; i++) {
+        console.log("in for loop");
+        console.log(i);
+        
+        (function() {
+            const query = `INSERT INTO Starring (videoID, artistID)
+                    VALUES	(?, 1),
+                            (?, 2),
+                            (?, 3),
+                            (?, 4),
+                            (?, 5),
+                            (?, 6),
+                            (?, 7);`
+
+             db.query(query, [i, i, i, i, i, i, i], (err, result) => {
+                if (err) throw err;
+                console.log("successful insertion");
+                // res.send();
+            });
+        })(i)
+           
+    // res.send("finished loop");
+    }
+    
+});
+
 app.listen(5000, () => {
     console.log("running on port 5000");
 });

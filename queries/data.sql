@@ -109,7 +109,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.17: Arcade Olympics (Part 1)",
-        "MC: none\nTeams: none\nThe members play games at an arcade.tation neede",
+        "MC: none\nTeams: none\nThe members play games at an arcade.",
         1,
         "https://www.youtube.com/embed/rs_3CFHm4KI",
         "2017-04-11",
@@ -117,7 +117,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.18: Arcade Olympics (Part 2)",
-        "MC: none\nTeams: none\nThe members play games at an arcade. RM wins. Suga, who ranked last overall, and Jimin, who ranked last in air hockey, both receive penalties: a balloon is popped right next to their ears.tation neede",
+        "MC: none\nTeams: none\nThe members play games at an arcade. RM wins. Suga, who ranked last overall, and Jimin, who ranked last in air hockey, both receive penalties: a balloon is popped right next to their ears.",
         1,
         "https://www.youtube.com/embed/bA35OcZ-pJk",
         "2017-04-18",
