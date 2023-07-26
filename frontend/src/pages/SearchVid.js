@@ -80,11 +80,13 @@ const SearchVid = (props) => {
       <div className="closeBtn" onClick={() => setHover(false)}>x</div>
           <h1 className="videoName">{Hover.name}</h1>
           <iframe width="79%" height="315" className="video"
-              src={Hover.link}>
+              src={Hover.link} title="YouTube video player" frameborder="0" 
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
           </iframe>
           <div className="contentInfo">
               <ol className="text infoList desc">
-                  <li>{Hover.description}</li>
+                  <li className='descriptionLine'>{Hover.description}</li>
               </ol>
               <ol className="infoList details">
                   <li className="indivItem">Category: {Hover.tags}</li>

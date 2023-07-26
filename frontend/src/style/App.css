@@ -611,28 +611,29 @@ body {
  /* carousel styling */
  .carouselContainer {
     position: relative;
-    display: inline-flex;
-    height: 450px;
+    /* display: inline-flex; */
+    height: 550px;
     /* width: 90%; */
-    width: 700px;
+    width: 800px;
     margin: 0 auto;
  }
  .caraViewport {
   position: absolute;
-  height: 450px;
+  height: 100%;
   width: 100%;
   padding: 0px;
   margin: 0px;
-  display: flex;
+  /* display: flex; */
   
  }
 .slide {
   position: absolute;
-  height: 450px;
+  height: 100%;
   width: 100%;
-  background-color: #61dafb;
+  background-color: #210e2f5e;
+  border-radius: 3px;
   list-style-type: none;
-  display: flex;
+  /* display: flex; */
 }
 /*  */
 .section {
@@ -664,7 +665,10 @@ body {
   list-style-type: none;
   background-clip: content-box;
 }
-
+.reccVideo {
+  position: absolute;
+  top: 120px;
+}
 .listShowBG {
   /* background-color: #210e2f91; */
   margin-bottom: 50px;
@@ -712,10 +716,11 @@ body {
   display: inline-flex;
   position: relative;
   height: 220px;
-  width: 170px;
-  margin: 3px 3px;
+  width: 150px;
+  margin: 7px 4px;
   background-color: transparent;
   overflow: hidden;
+  text-align: center;
 }
 .grouping {
   display: inline-block;
@@ -724,15 +729,26 @@ body {
 }
 .showName {
   position: absolute;
-  width: 160px;
-  display: flex;
-  font-weight: 500;
-  color: #0c0412;
+    left: 0;
+    right: 0;
+    /* text-align: center; */
+    /* display: flex; */
+    font-weight: 500;
+    color: #0c0412;
+    /* width: 140px;*/
 }
 .thumbnail {
-  object-fit: contain;
+  /* object-fit: contain; */
   width: 170px;
   display: flex;
+}
+.reccThumbnail {
+  width: 400px;
+  height: 230px;
+  display: flex;
+  top: 25%;
+  left: 15px;
+  position: absolute;
 }
 
 .indivShow:hover {
@@ -807,6 +823,22 @@ body {
   display: inline-flex;
   width:400px;
   margin: 10px;
+}
+.reccDesc {
+  position: absolute;
+  display: inline-block;
+  right: 5px;
+  width: 40%;
+  padding: 0;
+  margin: 10px;
+  top: 143px;
+  /* white-space: pre-line; */
+}
+.descriptionLine {
+  white-space: pre-line;
+}
+.reccDesc li {
+  margin-bottom:15px;
 }
 .details {
   position: absolute;
@@ -893,4 +925,8 @@ body {
 .modalContainer.searchModal {
   top:0;
   height: 115%;
+}
+
+img {
+  border-radius: 3px;
 }
