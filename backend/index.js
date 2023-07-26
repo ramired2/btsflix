@@ -126,6 +126,7 @@ app.get("/api/insertStarring/:min/:max", (req, res) => {
            
     // res.send("finished loop");
     }
+    res.send("finished");
     
 });
 
@@ -153,6 +154,35 @@ app.get("/api/assignCategory/:min/:max/:tagID", (req, res) => {
             });
         })(i)
     }
+    res.send("finished");
+});
+
+app.get("/api/generateRandVid", (req, res) => {
+
+    // set the rand number
+    const query = `SET @randNum = (SELECT FLOOR((SELECT RAND() * (((SELECT COUNT(videoID) FROM Videos))-1)+1)))`
+
+    db.query(query, (err, result) => {
+        if (err) throw err;
+    })
+
+    // make the query for videoID = randNumber
+    const query2 = `SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name as platformName, Videos.link, Thumbnails.thumbnail, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
+                GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', ') as starring
+                FROM Videos
+                INNER JOIN Thumbnails ON Videos.thumbnailID = Thumbnails.thumbnailID
+                INNER JOIN Platforms ON Videos.platformID = Platforms.platformID
+                INNER JOIN VideoTags ON Videos.videoID = VideoTags.videoID
+                LEFT JOIN Starring ON Videos.videoID = Starring.videoID
+                LEFT JOIN Members ON Starring.artistID = Members.memberID
+                INNER JOIN Tags ON VideoTags.tagID = Tags.tagID
+                WHERE Videos.videoID = @randNum;`
+    
+    db.query(query2, (err, result) => {
+        if (err) throw err;
+        // console.log(result);
+        res.send(result)
+    })
     
 });
 
