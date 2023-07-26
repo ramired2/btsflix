@@ -186,11 +186,12 @@
                 INNER JOIN Thumbnails ON Videos.thumbnailID = Thumbnails.thumbnailID
                 WHERE Videos.videoID = videoContained) as starred
 			FROM Videos
+            INNER JOIN Thumbnails ON Videos.thumbnailID = Thumbnails.thumbnailID
             INNER JOIN VideoTags ON Videos.videoID = VideoTags.videoID
             LEFT JOIN Starring ON Videos.videoID = Starring.videoID
             LEFT JOIN Members ON Starring.artistID = Members.memberID
             INNER JOIN Tags ON VideoTags.tagID = Tags.tagID
-            WHERE members.memberID = :memberID -- might have to add name or alias feature here too 
+            WHERE members.memberID = 1 -- might have to add name or alias feature here too 
             GROUP BY Videos.videoID
             ORDER BY Videos.name;
         
@@ -208,6 +209,23 @@
             GROUP BY Videos.videoID
             ORDER BY Videos.name;
             
+            -- get video by rand generated ID
+            SET @randNum = (SELECT FLOOR((SELECT RAND() * (((SELECT COUNT(videoID) FROM Videos))-1)+1)));
+            
+            SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name, Videos.link, Thumbnails.thumbnail, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
+			GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', ') as starring
+			FROM Videos
+            INNER JOIN Thumbnails ON Videos.thumbnailID = Thumbnails.thumbnailID
+            INNER JOIN Platforms ON Videos.platformID = Platforms.platformID
+            INNER JOIN VideoTags ON Videos.videoID = VideoTags.videoID
+            LEFT JOIN Starring ON Videos.videoID = Starring.videoID
+            LEFT JOIN Members ON Starring.artistID = Members.memberID
+            INNER JOIN Tags ON VideoTags.tagID = Tags.tagID
+            WHERE Videos.videoID = @randNum;
+            
+		-- select video by id
+        SELECT * FROM Videos WHERE videoID = :videoID;
+        
 	-- UPDATE
 		UPDATE Videos SET name = :name, description = :desc, platformID = (SELECT PlatformID FROM Platforms WHERE Platforms.name = :platformName), link = :link 
 			WHERE Videos.videoID = :vidId;
