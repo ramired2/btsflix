@@ -27,7 +27,7 @@ CREATE TABLE Albums (
     artistID INT NOT NULL,
     year int,
     PRIMARY KEY (albumID),
-    FOREIGN KEY (artistID) REFERENCES Members(memberID) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (artistID) REFERENCES Members(memberID) ON UPDATE CASCADE
 );
 
 CREATE TABLE Starring (
@@ -76,8 +76,8 @@ CREATE TABLE VideoTags (
     videoID INT NOT NULL,
     tagID INT NOT NULL,
     PRIMARY KEY (videoTagsID),
-    FOREIGN KEY (videoID) REFERENCES Videos(videoID)  ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (tagID) REFERENCES Tags(tagID) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (videoID) REFERENCES Videos(videoID),
+    FOREIGN KEY (tagID) REFERENCES Tags(tagID)
 );
 
 
@@ -160,19 +160,42 @@ VALUES	("Run BTS!"),
 INSERT INTO VideoTags (videoID, tagID)
 VALUES	(1, 1),
 		(1, 2),
+        (2, 1),
 		(2, 3),
+        (3, 1),
         (3, 5),
+        (4, 1),
         (4, 4);
         
 INSERT INTO Starring (videoID, artistID)
 VALUES	( 1, 3),
+		( 1, 2),
 		( 1, 1),
+        ( 1, 4),
+        ( 1, 6),
+        ( 1, 7),
         ( 1, 5),
 		( 2, 7),
         ( 2, 3),
         ( 2, 6),
+        ( 2, 2),
+        ( 2, 4),
+        ( 2, 5),
         ( 2, 1),
-        ( 4, 2);
+        ( 3, 1),
+        ( 3, 2),
+        ( 3, 3),
+        ( 3, 4),
+        ( 3, 5),
+        ( 3, 6),
+        ( 3, 7),
+        ( 4, 1),
+        ( 4, 2),
+        ( 4, 3),
+        ( 4, 4),
+        ( 4, 5),
+        ( 4, 6),
+        ( 4, 7);
     
 
 SET FOREIGN_KEY_CHECKS=1;

@@ -261,7 +261,7 @@
 
 	-- SELECT
 		-- select all
-        SELECT * FROM VideoTags;
+		SELECT * FROM VideoTags;
         
         SELECT VideoTags.videoID, Videos.name, GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags
 			FROM VideoTags
