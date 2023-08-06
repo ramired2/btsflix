@@ -98,16 +98,15 @@ app.get("/api/genSearch", (req, res) => {
 app.get("/api/insertStarring/:min/:max", (req, res) => {
     let min = req.params.min
     let max = req.params.max
-
     console.log("before loop")
     console.log(min)
     console.log(max)
-
+    
     for(let i = min; i <= max; i++) {
         console.log("in for loop");
         console.log(i);
         
-        (function() {
+        // (function() {
             const query = `INSERT INTO Starring (videoID, artistID)
                     VALUES	(?, 1),
                             (?, 2),
@@ -116,29 +115,38 @@ app.get("/api/insertStarring/:min/:max", (req, res) => {
                             (?, 5),
                             (?, 6),
                             (?, 7);`
-
              db.query(query, [i, i, i, i, i, i, i], (err, result) => {
                 if (err) throw err;
                 console.log("successful insertion");
                 // res.send();
             });
-        })(i)
+        // })(i)
            
     // res.send("finished loop");
     }
-    res.send("finished");
-    
+
+    res.send("finished loop");
 });
 
 app.get("/api/assignCategory/:min/:max/:tagID", (req, res) => {
-    let min = req.params.min
-    let max = req.params.max
-    let tagID = req.params.tagID
+    var min = req.params.min
+    var max = req.params.max
+    var tagID = req.params.tagID
+
+    // let min = 5
+    // let max = 10
+    // let tagID = 1
+    
 
     console.log("before loop")
     console.log(min)
     console.log(max)
     console.log(tagID)
+
+    db.connect(function(err) {
+        if (err) throw err;
+        console.log("db connected")
+    });
 
     for(let i = min; i <= max; i++) {
         console.log("in for loop");
@@ -152,6 +160,7 @@ app.get("/api/assignCategory/:min/:max/:tagID", (req, res) => {
                 if (err) throw err;
                 console.log("successful insertion");
             });
+            console.log("right after call")
         })(i)
     }
     res.send("finished");
