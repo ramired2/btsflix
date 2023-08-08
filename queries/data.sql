@@ -456,7 +456,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.60: Run BTS in Hotel (Part 2)",
-        "MC: none\n\nTeams: Team Kim Seok-jin (Suga, J-Hope, & Jungkook) Team Ppa (RM & Jin) Team Jji (Jimin & V)\n\nBTS continue playing games in a hotel room Team Kim Seok-jin wins. As a reward, members can yield their future penalties to another person.\n\n\n\n\n\nPenalty used in Episode 82",
+        "MC: none\n\nTeams: Team Kim Seok-jin (Suga, J-Hope, & Jungkook) Team Ppa (RM & Jin) Team Jji (Jimin & V)\n\nBTS continue playing games in a hotel room Team Kim Seok-jin wins. As a reward, members can yield their future penalties to another person. Penalty used in Episode 82",
         1,
         "https://www.youtube.com/embed/Tzb19yYhZKU",
         "2019-01-22",
@@ -1393,7 +1393,7 @@ VALUES	(2, 4),
         (35, 43),
         (36, 21),
         (37, 21),
-        (28, 22),
+        (38, 22),
         (39, 4),
         (40, 45),
         (41, 73),
@@ -1608,10 +1608,11 @@ VALUES	(2, 4),
         (154, 4),
         (154, 29),
         (155, 44),
-        (156, 71),
+        (156, 4),
         (157, 71),
-        (158, 72),
-        (159, 72);
+        (158, 71),
+        (159, 72),
+        (160, 72);
         
 -- index.js has link that u can use to insert
 -- all members from videos min to max
@@ -1624,7 +1625,21 @@ VALUES	(2, 4),
 -- 					(:video, 6),
 -- 					(:video, 7);
 
--- 
+-- index.js has link that u can use to insert
+-- specific category to min to max
+-- INSERT INTO VideoTags (videoID, tagID)
+--           VALUES  (?, ?)
+
+-- remove yoongi from eps -- 125, 128, 133, 134, 135, 136, 137, 138, 139, 142
+	DELETE FROM Starring WHERE starringID = 871;
+	DELETE FROM Starring WHERE starringID = 892;
+    DELETE FROM Starring WHERE starringID = 927;
+    DELETE FROM Starring WHERE starringID = 934;
+    DELETE FROM Starring WHERE starringID = 941;
+    DELETE FROM Starring WHERE starringID = 948;
+    DELETE FROM Starring WHERE starringID = 962;
+    DELETE FROM Starring WHERE starringID = 969;
+    DELETE FROM Starring WHERE starringID = 990;
 
 SET FOREIGN_KEY_CHECKS=1;
 COMMIT;

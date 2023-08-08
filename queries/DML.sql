@@ -271,7 +271,7 @@
 			ORDER BY Videos.Name;
             
 	-- UPDATE
-		-- no need for update can just delete relation
+		UPDATE VideoTags SET tagID = :tagID WHERE videoTagsID = :videoTagsID;
 
 	-- DELETE
 	DELETE FROM VideoTags WHERE videoTagsID = :videotagID
@@ -287,7 +287,7 @@
 		SELECT * FROM Starring;
         
 		-- select all artists from a video by id
-        SELECT Videos.videoID, Members.alias as starring, CONCAT(Members.lastName, ' ', Members.firstName) as fullName
+        SELECT Starring.starringID, Videos.videoID, Members.alias as starring, CONCAT(Members.lastName, ' ', Members.firstName) as fullName
 				FROM MEMBERS 
                 LEFT JOIN Starring ON Starring.artistID = Members.memberID 
                 INNER JOIN Videos ON Starring.videoID = Videos.videoID 
@@ -298,5 +298,5 @@
         UPDATE Starring SET videoID = :videoIn WHERE artistID = :artistID;
 
 	-- DELETE
-	DELETE FROM Starring WHERE starringID = :starringID;
+    DELETE FROM Starring WHERE starringID = :starringID;
     

@@ -96,8 +96,12 @@ app.get("/api/genSearch", (req, res) => {
 
 // INSERTING all members to videos
 app.get("/api/insertStarring/:min/:max", (req, res) => {
-    let min = req.params.min
-    let max = req.params.max
+    // let min = req.params.min
+    // let max = req.params.max
+
+    let min = 5
+    let max = 160
+
     console.log("before loop")
     console.log(min)
     console.log(max)
@@ -129,13 +133,13 @@ app.get("/api/insertStarring/:min/:max", (req, res) => {
 });
 
 app.get("/api/assignCategory/:min/:max/:tagID", (req, res) => {
-    var min = req.params.min
-    var max = req.params.max
-    var tagID = req.params.tagID
+    // let min = req.params.min
+    // let max = req.params.max
+    // let tagID = req.params.tagID <-- not working so have to set --V
 
-    // let min = 5
-    // let max = 10
-    // let tagID = 1
+    let min = 11
+    let max = 160
+    let tagID = 1
     
 
     console.log("before loop")
