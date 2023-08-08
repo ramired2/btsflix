@@ -167,13 +167,16 @@ app.get("/api/assignCategory/:min/:max/:tagID", (req, res) => {
 });
 
 app.get("/api/generateRandVid", (req, res) => {
-
+    console.log("/api/generateRandVid")
     // set the rand number
-    const query = `SET @randNum = (SELECT FLOOR((SELECT RAND() * (((SELECT COUNT(videoID) FROM Videos))-1)+1)))`
+    const query = `SET @randNum = (SELECT FLOOR((SELECT RAND() * ((((SELECT COUNT(videoID) FROM Videos)-1))-1)+1)))`
 
     db.query(query, (err, result) => {
         if (err) throw err;
-    })
+        // console.log("first query done -- set rand num")
+    });
+
+    
 
     // make the query for videoID = randNumber
     const query2 = `SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name as platformName, Videos.link, Thumbnails.thumbnail, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
@@ -191,7 +194,11 @@ app.get("/api/generateRandVid", (req, res) => {
         if (err) throw err;
         // console.log(result);
         res.send(result)
-    })
+        console.log(result)
+    });
+
+    // console.log("second quey done -- got show")
+    // res.send("finished")
     
 });
 

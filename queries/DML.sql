@@ -159,7 +159,7 @@
             LEFT JOIN Starring ON Videos.videoID = Starring.videoID
             LEFT JOIN Members ON Starring.artistID = Members.memberID
             INNER JOIN Tags ON VideoTags.tagID = Tags.tagID
-            WHERE Tags.tag = :inputbydropdown
+            WHERE Tags.tag = ""
             GROUP BY Videos.videoID
             ORDER BY Videos.name;
         
@@ -210,7 +210,7 @@
             ORDER BY Videos.name;
             
             -- get video by rand generated ID
-            SET @randNum = (SELECT FLOOR((SELECT RAND() * (((SELECT COUNT(videoID) FROM Videos))-1)+1)));
+            SET @randNum = (SELECT FLOOR((SELECT RAND() * ((((SELECT COUNT(videoID) FROM Videos)-1))-1)+1)));
             
             SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name, Videos.link, Thumbnails.thumbnail, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
 			GROUP_CONCAT(DISTINCT Tags.tag ORDER BY Tags.tag ASC SEPARATOR ', ') as tags, GROUP_CONCAT(DISTINCT Members.alias SEPARATOR ', ') as starring
