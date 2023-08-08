@@ -729,8 +729,8 @@ body {
 }
 .showName {
   position: absolute;
-    left: 0;
-    right: 0;
+  left: 5px;
+  right: 20px;
     /* text-align: center; */
     /* display: flex; */
     font-weight: 500;

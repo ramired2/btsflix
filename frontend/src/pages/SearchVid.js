@@ -108,7 +108,7 @@ const SearchVid = (props) => {
                                     shows.map ((show, idx) => 
                                       <div className="indivShow" onClick={() => {setHover(show);}}>
                                         <div className='grouping'><p className='text showName'>{show.name}</p>
-                                          <img className="thumbnail" src={show.thumbnail} alt="show thumbnail" />
+                                        <img className="thumbnail" src={`/${show.thumbnail}`} alt="episodes thumbnail" />
                                           </div>
                                       </div>)
                   : "Loading..."}
