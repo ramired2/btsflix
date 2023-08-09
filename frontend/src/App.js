@@ -3,6 +3,7 @@ import './style/App.css';
 import Homepage from './pages/Homepage.js';
 import MainVid from './pages/MainVid.js';
 import SearchVid from './pages/SearchVid';
+import SearchAlbum from './pages/SearchAlbums';
 import MainMusic from './pages/MainMusic.js'
 
 /* special library and its components to perform redirection easily */
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/shows" element={<MainVid/>} />
           <Route exact path="/discography" element={<MainMusic/>} />
           <Route exact path="/search/:type/:search" element={<SearchVid />} />
+          <Route exact path="/search/:search" element={<SearchAlbum />} />
           {/* <Route path="*" element={<404Page />} /> */}
         </Routes>
       </Router>

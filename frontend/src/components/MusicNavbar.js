@@ -1,5 +1,5 @@
 import React, {useState, useEffect, Fragment} from 'react';
-// import CategoriesVid from "../components/CategoriesMusic.js";
+import CategoriesAlbums from "../components/CategoriesAlbums.js";
 import { Link } from "react-router-dom";
 
 function MusicNavbar (props) {  
@@ -31,12 +31,12 @@ function MusicNavbar (props) {
                   <div className='navList'>
                   <a href='/discography'><li id="nav_item">Music</li></a>
                   {/* <li id="nav_item"><a href="/">Home</a></li> */}
-                  {/* <div onMouseEnter={() => setHover(true)}>
+                  <div onMouseEnter={() => setHover(true)}>
                     <li id="nav_item" className="categoriesHover">Categories</li>
 
-                    {Hover == true? <div onMouseLeave={() => setHover(false)}><CategoriesVid ></CategoriesVid></div> :""}
+                    {Hover == true? <div onMouseLeave={() => setHover(false)}><CategoriesAlbums ></CategoriesAlbums></div> :""}
                     
-                  </div> */}
+                  </div>
                   {/* {modal()} */}
                   
                   </div>

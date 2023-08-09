@@ -83,7 +83,7 @@ app.get("/api/genSearch", (req, res) => {
                         LEFT JOIN Starring ON Videos.videoID = Starring.videoID
                         LEFT JOIN Members ON Starring.artistID = Members.memberID
                         INNER JOIN Tags ON VideoTags.tagID = Tags.tagID
-                        WHERE Videos.name LIKE "%` + search + `%" OR Tags.tag LIKE "%` + search + `%" OR Members.alias LIKE "%` + search + `%"
+                        WHERE Videos.name LIKE "%` + search + `%" OR Tags.tag LIKE "%` + search + `%" OR Members.alias LIKE "%` + search + `%" OR Members.firstName LIKE "%` + search + `%" OR Members.lastName LIKE "%` + search + `%"
                         GROUP BY Videos.videoID
                         ORDER BY Videos.name;`
 
@@ -218,6 +218,7 @@ app.get("/api/albumsFromMembersORYear", (req, res) => {
                     FROM Albums
                     INNER JOIN Members ON Albums.artistID = Members.memberID
                     WHERE (Members.lastName = "` + category + `" OR Members.firstName = "` + category + `" OR Members.alias = "` + category + `" OR Albums.year = "` + category + `" )
+                    GROUP BY Albums.albumName
                     ORDER BY Albums.albumName;`
 
     console.log(query)
@@ -238,6 +239,27 @@ app.get("/api/getAlbums", (req, res) => {
         res.send(result)
     });
 });
+
+app.get("/api/getAllAlbums", (req, res) => {
+    const category = req.query.category;
+    console.log(category)
+    // console.log(req)
+
+    const query = `SELECT Albums.albumID, Albums.albumName, Albums.artistID, CONCAT(Members.lastName, " ", Members.firstName) AS fullName, Members.alias, Albums.year, Albums.link, Albums.cover
+                    FROM Albums
+                    INNER JOIN Members ON Albums.artistID = Members.memberID
+                    GROUP BY Albums.year
+                    ORDER BY Albums.year;`
+
+    console.log(query)
+
+    db.query(query, (err, result) => {
+        if (err) throw err;
+        console.log(result);
+        res.send(result)
+    })
+});
+
 
 app.listen(5000, () => {
     console.log("running on port 5000");

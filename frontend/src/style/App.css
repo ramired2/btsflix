@@ -259,7 +259,7 @@ body {
   /* box-shadow: 0px 0px 11px 4px #746784; */
   box-shadow: -1px 1px 12px 7px #746784;
   border-radius: 5px;
-  background-color: #e3e9c2b9; /* ffd2fca5 */
+  background-color: #4f425f; /* ffd2fca5 */
 }
 
 .TV {
@@ -292,7 +292,7 @@ body {
     content: "";
   width: 150px;
   height: 95px;
-  background-color: #4f425f;
+  background-color: #e2bcdfa5;
   border: 3px solid #49325a;
   border-radius: 10px;
   z-index: 6;
@@ -898,9 +898,9 @@ body {
   display: inline-block;
   position: absolute;
   top: 200px;
-  left: 3%;
+  /* left: 3%; */
   text-align: left;
-  right: 3%;
+  /* right: 3%; */
   padding: 50px 20px;
   border-radius: 3px;
   background-color: #210e2f89;
@@ -913,9 +913,14 @@ body {
   padding: 0;
 }
 .searchContainer {
-  display: inline-block;
+  /* display: inline-block;
   width: 100%;
-  height: inherit;
+  height: inherit; */
+  display: flex;
+    width: 100%;
+    height: inherit;
+    text-align: center;
+    justify-content: center;
 }
 /* title search */
 .title {
@@ -947,7 +952,22 @@ img {
 }
 .indivAlbums {
   margin: 8px 5px;
+  height: 170px;
+  width: 170px;
 }
 .indivAlbums:hover {
   cursor: pointer;
+}
+
+.albumsModal {
+  top: 0px;
+}
+
+.modalContentInfo {
+  margin-top: 60px;
+}
+
+/* albums listpage */
+.album {
+  top: 3%;
 }
