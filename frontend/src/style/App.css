@@ -940,3 +940,14 @@ img {
 .btnSearch:hover{
   cursor: pointer;
 }
+
+/* album modal text position */
+.albumDetails {
+  right: 36%;
+}
+.indivAlbums {
+  margin: 8px 5px;
+}
+.indivAlbums:hover {
+  cursor: pointer;
+}

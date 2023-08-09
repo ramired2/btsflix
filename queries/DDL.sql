@@ -23,9 +23,11 @@ CREATE TABLE Members (
 
 CREATE TABLE Albums (
 	albumID INT AUTO_INCREMENT NOT NULL,
-    albumName VARCHAR(45),
+    albumName VARCHAR(255),
     artistID INT NOT NULL,
     year int,
+    cover VARCHAR(255),
+    link VARCHaR(255),
     PRIMARY KEY (albumID),
     FOREIGN KEY (artistID) REFERENCES Members(memberID) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -97,11 +99,11 @@ VALUES	("김남준" , "Kim", "Namjoon", "RM"),
         -- -- ("정호석", "Jung", "Hoseok", "J-Hope")
         
         
-INSERT INTO Albums (albumName, artistID, year)
-VALUES	("Mono", 1, 2018),
-		("D-2", 3, 2020),
-        ("Map of the Soul Persona", 8, 2019),
-        ("Jack in the Box", 4, 2022);
+INSERT INTO Albums (albumName, artistID, cover, link, year)
+VALUES	("Mono.", 1, "mono.png", "https://open.spotify.com/album/1vsTrL1h2bRHP1kUPvlIyb", 2018),
+		("D-2", 3, "d2.jpg", "https://open.spotify.com/album/7lhFsAaVCFaYbkNvBMw5Zf?si=2d228857805546f5", 2020),
+        ("Map of the Soul Persona", 8, "persona.png", "https://open.spotify.com/album/2KqlAl1Kl5fZvbFgJ0qFB6?highlight=spotify:track:2GXWzWPsYlTZcvVW8JIu69", 2019),
+        ("Jack in the Box", 4, "jackinthebox.png", "https://open.spotify.com/album/0FrC9lzgVhziJenigsrXdl?si=42711c8878294be4", 2022);
         
 INSERT INTO Platforms (name, numVideos)
 VALUES	("Youtube", 3),

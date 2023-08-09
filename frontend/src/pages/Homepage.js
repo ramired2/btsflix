@@ -16,13 +16,15 @@ const Homepage = () => {
         </div>
         </a>
 
-        <div className="music option">
-          <div className="cdPlayer">
-            <div className="cdContainer">
-              <div className="cd"></div>
+        <a href="/discography">
+            <div className="music option">
+            <div className="cdPlayer">
+              <div className="cdContainer">
+                <div className="cd"></div>
+              </div>
             </div>
           </div>
-        </div>
+          </a>
 
         <div className="mag option">
           <div className="mags"></div>

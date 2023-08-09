@@ -24,6 +24,8 @@ app.get("/", (req, res) => {
     res.send("hi")
 });
 
+// FOR SHOWS
+
 app.get("/api/getMembers", (req, res) => {
     const query = `SELECT * FROM Members;`
 
@@ -204,6 +206,37 @@ app.get("/api/generateRandVid", (req, res) => {
     // console.log("second quey done -- got show")
     // res.send("finished")
     
+});
+
+// FOR ALBUMS
+app.get("/api/albumsFromMembersORYear", (req, res) => {
+    const category = req.query.category;
+    console.log(category)
+    // console.log(req)
+
+    const query = `SELECT Albums.albumID, Albums.albumName, Albums.artistID, CONCAT(Members.lastName, " ", Members.firstName) AS fullName, Members.alias, Albums.year, Albums.cover, Albums.link
+                    FROM Albums
+                    INNER JOIN Members ON Albums.artistID = Members.memberID
+                    WHERE (Members.lastName = "` + category + `" OR Members.firstName = "` + category + `" OR Members.alias = "` + category + `" OR Albums.year = "` + category + `" )
+                    ORDER BY Albums.albumName;`
+
+    console.log(query)
+
+    db.query(query, (err, result) => {
+        if (err) throw err;
+        console.log(result);
+        res.send(result)
+    })
+});
+
+app.get("/api/getAlbums", (req, res) => {
+    const query = `SELECT * FROM Albums;`
+
+    db.query(query, (err, result) => {
+        if (err) throw err;
+        // console.log(result);
+        res.send(result)
+    });
 });
 
 app.listen(5000, () => {

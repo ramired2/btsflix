@@ -67,8 +67,10 @@
         SELECT Albums.albumID, Albums.albumName, Albums.artistID, CONCAT(Members.lastName, " ", Members.firstName) AS fullName, Members.alias, Albums.year
 			FROM Albums
             INNER JOIN Members ON Albums.artistID = Members.memberID
-            WHERE (Members.lastName = :"" OR Members.firstName = :"" OR Members.alias = :"" OR Albums.albumName = :"")
+            WHERE (Members.lastName = "yoongi" OR Members.firstName = "yoongi" OR Members.alias = "yoongi" OR Albums.year = "yoongi")
             ORDER BY Albums.albumName;
+            
+		SELECT * FROM Albums WHERE albumID = 24;
             
 	-- UPDATE
 		UPDATE Albums SET albumName = :albumName, artistID = :singer, year = :year WHERE Albums.albumID = :input;
