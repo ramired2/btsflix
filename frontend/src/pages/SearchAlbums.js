@@ -100,7 +100,7 @@ const SearchAlbum = (props) => {
         <div className='listShows'>
           {albums? albums == ""? "No Results":
                                     albums.map ((album, idx) => 
-                                      <div className="indivShow" onClick={() => {setHover(album);}}>
+                                      <div className="indivShow" onClick={() => {setHover(album); window.scrollTo(0, 0);}}>
                                         <div className='grouping'>
                                             {/* <p className='text showName'>{show.name}</p> */}
                                             <img className="thumbnail" src={`/${album.cover}`} alt="episodes thumbnail" />

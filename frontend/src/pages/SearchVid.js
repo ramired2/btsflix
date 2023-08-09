@@ -106,7 +106,7 @@ const SearchVid = (props) => {
         <div className='listShows'>
           {shows? shows == ""? "No Results":
                                     shows.map ((show, idx) => 
-                                      <div className="indivShow" onClick={() => {setHover(show);}}>
+                                      <div className="indivShow" onClick={() => {setHover(show); window.scrollTo(0, 0);}}>
                                         <div className='grouping'><p className='text showName'>{show.name}</p>
                                         <img className="thumbnail" src={`/${show.thumbnail}`} alt="episodes thumbnail" />
                                           </div>
