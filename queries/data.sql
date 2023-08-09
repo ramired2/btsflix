@@ -280,7 +280,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.38: Spin BTS",
-        "MC: none\n\nTeams: Golden Youngest (Jin & Jimin) Cherry RM (J-Hope & Jungkook) Happy Evangelist (RM, Suga & V)\n\nBTS divide into teams and play tug of war. They must pull two other members in order to complete a puzzle Golden Youngest wins. As the losers, RM gets blurred, Suga has to wear Jin's BT21 costume, and V has to accompany RM in climbing Achasan mountain.\n\n\n\n\n\nSuga carries out his punishment from episode 35 by wearing a Chimmy costume.",
+        "MC: none\n\nTeams: Golden Youngest (Jin & Jimin) Cherry RM (J-Hope & Jungkook) Happy Evangelist (RM, Suga & V)\n\nBTS divide into teams and play tug of war. They must pull two other members in order to complete a puzzle Golden Youngest wins. As the losers, RM gets blurred, Suga has to wear Jin's BT21 costume, and V has to accompany RM in climbing Achasan mountain. Suga carries out his punishment from episode 35 by wearing a Chimmy costume.",
         1,
         "https://www.youtube.com/embed/ZyayTHW1mcc",
         "2018-01-30",
@@ -304,7 +304,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.41: BTS Golden Bell",
-        "MC: Jin\n\nTeams: RM, V & Jungkook Suga , J-Hope & Jimin\n\nIn a continuation of episode 40, BTS play various games in a Golden Bell-type show. RM wins. Suga loses the rock, paper, and scissor game and has to go to the sea.\n\n\n\n\n\nSuga carries out his punishment from episode 38 by presenting a book report",
+        "MC: Jin\n\nTeams: RM, V & Jungkook Suga , J-Hope & Jimin\n\nIn a continuation of episode 40, BTS play various games in a Golden Bell-type show. RM wins. Suga loses the rock, paper, and scissor game and has to go to the sea. Suga carries out his punishment from episode 38 by presenting a book report",
         1,
         "https://www.youtube.com/embed/RIBC0PX0bg4",
         "2018-02-20",
@@ -320,7 +320,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.43: Satisfaction of the Five Senses (Part 1)",
-        "MC: none\n\nTeams: none\n\nThe members play games that test their senses\n\n\n\n\n\nSuga carries out his punishments from episodes 39 and 42 by going to the sea and wearing an RJ costume.",
+        "MC: none\n\nTeams: none\n\nThe members play games that test their senses Suga carries out his punishments from episodes 39 and 42 by going to the sea and wearing an RJ costume.",
         1,
         "https://www.youtube.com/embed/fwf7zM-IgDI",
         "2018-03-06",
@@ -328,7 +328,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.44: Satisfaction of the Five Senses (Part 2)",
-        "MC: none\n\nTeams: none\n\nThe members play games that test their senses. Jungkook wins. Jin has to make RM and V breakfast for their journey.\n\n\n\n\n\nRM and V carry out their punishment from episodes 38 and 39 by climbing Achasan mountain",
+        "MC: none\n\nTeams: none\n\nThe members play games that test their senses. Jungkook wins. Jin has to make RM and V breakfast for their journey. RM and V carry out their punishment from episodes 38 and 39 by climbing Achasan mountain",
         1,
         "https://www.youtube.com/embed/XpOmEK9acjo",
         "2018-03-13",
@@ -352,7 +352,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.47: Protect the BTS Village (Part 1)",
-        "MC: none\n\nTeams: BTS Villagers (Jungkook, RM, Jin & J-Hope) Blue Villagers (Jimin, Suga & V)\n\nBTS play a modified version of the social deduction game Mafia. The members act as residents of BTS Village and must protect the town by deducing who among them are imposters from the neighboring enemy Blue Village.\n\n\n\n\n\nEpisodes set in BTS Village make up the BTS Village universe (as explained in episode 146). Protect the BTS Village is followed by Season 3's Reply BTS Village (episodes 121-122) and BTS Village: Joseon Dynasty (episodes 146-148).",
+        "MC: none\n\nTeams: BTS Villagers (Jungkook, RM, Jin & J-Hope) Blue Villagers (Jimin, Suga & V)\n\nBTS play a modified version of the social deduction game Mafia. The members act as residents of BTS Village and must protect the town by deducing who among them are imposters from the neighboring enemy Blue Village. Episodes set in BTS Village make up the BTS Village universe (as explained in episode 146). Protect the BTS Village is followed by Season 3's Reply BTS Village (episodes 121-122) and BTS Village: Joseon Dynasty (episodes 146-148).",
         1,
         "https://www.youtube.com/embed/NbHWln007vM",
         "2018-04-03",
@@ -368,7 +368,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.49: Eve Event, Pt. 1",
-        "MC: Suga\n\nTeams: none\n\nBTS celebrate the eve of their 50th episode by reacting to highlights from the highest-ranked episodes and famous moments in the show\n\n\n\n\n\nI. Top 5 Run BTS Episodes by view count:\n\n\n\nEpisode 31 (The Variety Show of Memories Part 2)\n\nEpisode 11 (Back to School)\n\nEpisode 20 (The Taste of Korea)\n\nEpisode 33 (BTS and Manito Part 1)\n\nEpisode 12 (Cops)\n\nII. Top 5 Run BTS Episodes by Heart Count\n\n\n\nEpisode 31 (The Variety Show of Memories Part 2)\n\nEpisode 33 (BTS and Manito Part 1)\n\nEpisode 32 (Take Care of Santa)\n\nEpisode 34 (BTS and Manito Part 2)\n\nEpisode 35 (Kimchi Battle)",
+        "MC: Suga\n\nTeams: none\n\nBTS celebrate the eve of their 50th episode by reacting to highlights from the highest-ranked episodes and famous moments in the show I. Top 5 Run BTS Episodes by view count: Episode 31 (The Variety Show of Memories Part 2)\n\nEpisode 11 (Back to School)\n\nEpisode 20 (The Taste of Korea)\n\nEpisode 33 (BTS and Manito Part 1)\n\nEpisode 12 (Cops)\n\nII. Top 5 Run BTS Episodes by Heart Count Episode 31 (The Variety Show of Memories Part 2)\n\nEpisode 33 (BTS and Manito Part 1)\n\nEpisode 32 (Take Care of Santa)\n\nEpisode 34 (BTS and Manito Part 2)\n\nEpisode 35 (Kimchi Battle)",
         1,
         "https://www.youtube.com/embed/z2jCejZA0lA",
         "2018-04-17",
@@ -376,7 +376,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.50: Eve Event, Pt. 2 & The 50th Episode Special, Pt. 1",
-        "MC: Suga\n\nTeams: The 50th Episode Special: Frogs (Jungkook & V) Rabbits (Jimin & Jin) Dogs (RM, J-Hope & Suga)\n\nI. Run BTS 50th Episode Eve Event, Pt. 2: BTS continue their 50th episode eve event with an award ceremony.\n\n\n\nCutie Pie Award - Jimin (winner) Suga V (nominees)\n\nSports Award - Jungkook (winner) RM Jimin (nominees)\n\nMC Award - Suga (winner) Jin (nominee)\n\nActing Award - V (winner) J-Hope Jungkook (nominees)\n\nCooking Award - Jin (winner) J-Hope Jungkook (nominees)\n\nConsideration Award - RM (winner) Jungkook Jimin (nominees)\n\nAudio Award - J-Hope (winner) Jin Suga (nominees)\n\nBest Chemistry Award - Suga & V RM & Jin J-Hope, Jimin & Jungkook (winners)\n\nHonorary Grand Prize - BTS (winners)\n\n\n\nII. The 50th Episode Special, Pt. 1: BTS celebrate their 50th episode and carry-out a mission in an amusement park",
+        "MC: Suga\n\nTeams: The 50th Episode Special: Frogs (Jungkook & V) Rabbits (Jimin & Jin) Dogs (RM, J-Hope & Suga)\n\nI. Run BTS 50th Episode Eve Event, Pt. 2: BTS continue their 50th episode eve event with an award ceremony. Cutie Pie Award - Jimin (winner) Suga V (nominees)\n\nSports Award - Jungkook (winner) RM Jimin (nominees)\n\nMC Award - Suga (winner) Jin (nominee)\n\nActing Award - V (winner) J-Hope Jungkook (nominees)\n\nCooking Award - Jin (winner) J-Hope Jungkook (nominees)\n\nConsideration Award - RM (winner) Jungkook Jimin (nominees)\n\nAudio Award - J-Hope (winner) Jin Suga (nominees)\n\nBest Chemistry Award - Suga & V RM & Jin J-Hope, Jimin & Jungkook (winners)\n\nHonorary Grand Prize - BTS (winners) II. The 50th Episode Special, Pt. 1: BTS celebrate their 50th episode and carry-out a mission in an amusement park",
         1,
         "https://www.youtube.com/embed/RvDfJBPxjjw",
         "2018-04-24",
@@ -432,7 +432,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.57: BTS Chef (Part 1)",
-        "MC: none\n\nTeams: 95's (V & Jimin) Boxing (Jungkook & Jin) Ref (J-Hope, Suga, & RM)\n\nBTS divide into groups and cook Italian food\n\n\n\n\n\nThis is the first episode to use Idol as the opening theme.",
+        "MC: none\n\nTeams: 95's (V & Jimin) Boxing (Jungkook & Jin) Ref (J-Hope, Suga, & RM)\n\nBTS divide into groups and cook Italian food This is the first episode to use Idol as the opening theme.",
         1,
         "https://www.youtube.com/embed/a_slpLU5WJA",
         "2019-01-01",
@@ -480,7 +480,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.63: BTS School (Part 1)",
-        "MC: Suga\n\nTeams: Team Kim Seok-jin (RM, Jin, & V) Team Jeon Jungkook (J-Hope, Jimin, & Jungkook)\n\nBTS act as students in a classroom, led by teacher/MC Suga, and hold an election for class president Jungkook wins and is given a secret benefit\n\n\n\n\n\nBenefit revealed in Episode 65",
+        "MC: Suga\n\nTeams: Team Kim Seok-jin (RM, Jin, & V) Team Jeon Jungkook (J-Hope, Jimin, & Jungkook)\n\nBTS act as students in a classroom, led by teacher/MC Suga, and hold an election for class president Jungkook wins and is given a secret benefit Benefit revealed in Episode 65",
         1,
         "https://www.youtube.com/embed/flju_g_kIB0",
         "2019-02-12",
@@ -664,7 +664,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.86: Hangul Day Special (Part 1)",
-        "MC: none\n\nTeams: none\n\nIn celebration of Hangul Day, BTS are quizzed on Korean traditional words and phrases. They are awarded stickers based on their performance\n\n\n\n\n\nThis is the first episode made available on both V Live and Weverse.",
+        "MC: none\n\nTeams: none\n\nIn celebration of Hangul Day, BTS are quizzed on Korean traditional words and phrases. They are awarded stickers based on their performance This is the first episode made available on both V Live and Weverse.",
         1,
         "https://www.youtube.com/embed/pE_d8ZwFSVA",
         "2019-10-08",
@@ -728,7 +728,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.94: BTS Marble (Part 2)",
-        "MC: none\n\nTeams: Yellow Team (Suga, J-Hope, Jimin, & Jungkook) Blue Team (RM, Jin, & V)\n\nBTS play the board game BTS Marble. Blue Team wins.\n\n\n\n\n\nJ-Hope, Jin, and Suga carry out their punishment from episodes 90 and 92 by wearing sunflower headbands at the airport upon returning to Korea.",
+        "MC: none\n\nTeams: Yellow Team (Suga, J-Hope, Jimin, & Jungkook) Blue Team (RM, Jin, & V)\n\nBTS play the board game BTS Marble. Blue Team wins. J-Hope, Jin, and Suga carry out their punishment from episodes 90 and 92 by wearing sunflower headbands at the airport upon returning to Korea.",
         1,
         "https://www.youtube.com/embed/cZOsTxnZhbE",
         "2020-02-04",
@@ -760,7 +760,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.98: Pajama Party (Part 2",
-        "MC: none\n\nTeams: none\n\nBTS continue playing games at a pajama party. Jin wins. RM places last and has to do the penalty with Jimin.\n\n\n\n\n\nThe penalty is carried out in episode 117.",
+        "MC: none\n\nTeams: none\n\nBTS continue playing games at a pajama party. Jin wins. RM places last and has to do the penalty with Jimin. The penalty is carried out in episode 117.",
         1,
         "https://www.youtube.com/embed/UEDrCw6FDHU",
         "2020-03-31",
@@ -768,7 +768,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.99: Florists",
-        "MC: none\n\nTeams: Bubble Bowl (Jimin) Bouquet (J-Hope & Jungkook) Flower Coronet (RM & Jin) Wreath (Suga & V)\n\nBTS members are introduced to floristry. A guest florist reveals the birth flower of each of the members and teaches them how to make boutonni\u00e8res. The members then create various flower arrangements of their own design.\n\n\n\n\n\nThis is the final episode to use Idol as the opening theme.",
+        "MC: none\n\nTeams: Bubble Bowl (Jimin) Bouquet (J-Hope & Jungkook) Flower Coronet (RM & Jin) Wreath (Suga & V)\n\nBTS members are introduced to floristry. A guest florist reveals the birth flower of each of the members and teaches them how to make boutonni\u00e8res. The members then create various flower arrangements of their own design. This is the final episode to use Idol as the opening theme.",
         1,
         "https://www.youtube.com/embed/76Syt8Y1tJQ",
         "2020-04-07",
@@ -776,7 +776,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.100: 100th Episode Special (Part 1",
-        "MC: none\n\nTeams: Team Baek-jin (J-Hope, RM, & Suga) Team Seok-baek (Jungkook, V, Jin, & Jimin)\n\nTo celebrate the show's 100th episode, BTS members do upgraded versions of missions they enjoyed doing in previous episodes. The members play a quiz about previous Run BTS episodes to determine who will be given the privilege to choose his group members\n\n\n\n\n\nThis is the first episode to use On as the opening theme.",
+        "MC: none\n\nTeams: Team Baek-jin (J-Hope, RM, & Suga) Team Seok-baek (Jungkook, V, Jin, & Jimin)\n\nTo celebrate the show's 100th episode, BTS members do upgraded versions of missions they enjoyed doing in previous episodes. The members play a quiz about previous Run BTS episodes to determine who will be given the privilege to choose his group members This is the first episode to use On as the opening theme.",
         1,
         "https://www.youtube.com/embed/KU2ZGMv85aQ",
         "2020-04-14",
@@ -800,7 +800,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.103: King of Avatar Cook (Part 2)",
-        "MC: J-Hope\n\nTeams: Team Kim Seok-yi-gin (Jin, V, & Jungkook) Team Kim Seok-jin (Suga, RM, & Jimin)\n\nBTS members in each team cook food based on instructions given from team leaders Jin and Suga, who are watching from a separate room. Team Kim Seok-yi-gin wins. Team Kim Seok-jin is given the penalty of climbing Achasan mountain\n\n\n\n\n\nThis was the last episode aired before the show went on its first hiatus of the year, for the release of BTS' Break the Silence documentary.",
+        "MC: J-Hope\n\nTeams: Team Kim Seok-yi-gin (Jin, V, & Jungkook) Team Kim Seok-jin (Suga, RM, & Jimin)\n\nBTS members in each team cook food based on instructions given from team leaders Jin and Suga, who are watching from a separate room. Team Kim Seok-yi-gin wins. Team Kim Seok-jin is given the penalty of climbing Achasan mountain This was the last episode aired before the show went on its first hiatus of the year, for the release of BTS' Break the Silence documentary.",
         1,
         "https://www.youtube.com/embed/IdG8gSYHlnw",
         "2020-05-05",
@@ -864,7 +864,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.111: Treasure Hunt (Part 2)",
-        "MC: none\n\nTeams: none\n\nThe members play individually to find clues for the hidden treasure. The treasure is going home early Jin is the first one to finish.\n\n\n\n\n\nThis was the last episode aired before the show went on its second (and final) hiatus of the year, for the release of the BTS In the Soop reality series.",
+        "MC: none\n\nTeams: none\n\nThe members play individually to find clues for the hidden treasure. The treasure is going home early Jin is the first one to finish. This was the last episode aired before the show went on its second (and final) hiatus of the year, for the release of the BTS In the Soop reality series.",
         1,
         "https://www.youtube.com/embed/v5X_bpav1G0",
         "2020-08-04",
@@ -904,7 +904,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.116: Teambuilding Special (Part 1)",
-        "MC: none\n\nTeams: none\n\nBTS do teamwork challenges and have to complete five out of sixteen to go home.\n\n\n\n\n\nRM and Jimin carry out their penalty from episodes 98-99 by wearing work pants and rubber shoes.",
+        "MC: none\n\nTeams: none\n\nBTS do teamwork challenges and have to complete five out of sixteen to go home. RM and Jimin carry out their penalty from episodes 98-99 by wearing work pants and rubber shoes.",
         1,
         "https://www.youtube.com/embed/l7G6wsrVTG4",
         "2020-11-17",
@@ -920,7 +920,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.118: Photo Story (Part 1)",
-        "MC: none\n\nTeams: none\n\nAt Samsung Electronics Cafe Camptong, BTS need to find sticky notes and take pictures according to the instructions written on them to earn points. They must also locate seven key cards that open lockers with more sticky notes inside each card is worth 10 points. As a penalty, the member with the least points must act as a Genie to the member with the most points and grant him a wish.\n\n\n\n\n\nJimin and Jungkook carry out their punishment from episode 114 by wearing spangled t-shirts for the day.",
+        "MC: none\n\nTeams: none\n\nAt Samsung Electronics Cafe Camptong, BTS need to find sticky notes and take pictures according to the instructions written on them to earn points. They must also locate seven key cards that open lockers with more sticky notes inside each card is worth 10 points. As a penalty, the member with the least points must act as a Genie to the member with the most points and grant him a wish. Jimin and Jungkook carry out their punishment from episode 114 by wearing spangled t-shirts for the day.",
         1,
         "https://www.youtube.com/embed/yiqe-aegVk0",
         "2020-12-01",
@@ -936,7 +936,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.120: Reply BTS Village (Part 1)",
-        "MC: none\n\nTeams: Detective (Jin) Innocents (Suga, J-Hope, Jimin, & Jungkook) Culprits (RM, V)\n\nBTS play a modified version of Mafia, set in the BTS Village during the 1900s: the members act as former residents of BTS Village with the goal of finding who among them broke the ARMY headstone.\n\n\n\n\n\nEpisodes set in BTS Village make up the BTS Village universe (as explained in episode 146). Reply BTS Village is preceded by Season 2's Protect the BTS Village (episodes 48-49), and followed by Season 3's BTS Village: Joseon Dynasty (episodes 146-148).",
+        "MC: none\n\nTeams: Detective (Jin) Innocents (Suga, J-Hope, Jimin, & Jungkook) Culprits (RM, V)\n\nBTS play a modified version of Mafia, set in the BTS Village during the 1900s: the members act as former residents of BTS Village with the goal of finding who among them broke the ARMY headstone. Episodes set in BTS Village make up the BTS Village universe (as explained in episode 146). Reply BTS Village is preceded by Season 2's Protect the BTS Village (episodes 48-49), and followed by Season 3's BTS Village: Joseon Dynasty (episodes 146-148).",
         1,
         "https://www.youtube.com/embed/oia-9KHAWXI",
         "2020-12-15",
@@ -976,7 +976,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.125: K-HAM Special",
-        "MC: none\n\nTeams: Team 1  (V, Jimin, & Jin) Team 2 (Jungkook, RM, & J-Hope)\n\nBTS divide into two teams of three and prepare dishes using k-ham (canned pork) that will be judged by South Korean chef Baek Jong-won. The winning team will receive special knives engraved with Baek's name as a prize. Team 1 cooks ham potato stew. Team 2 cooks ramen, ham and rice. Baek shows BTS how to make ham fried rice in return. At the end of the episode, Baek announces that both teams won because they both made their dishes well, and presents knives to all seven members.\n\n\n\n\n\nThe episode is a collaboration between Baek and BTS to promote Korean pork. A condensed version of the special was aired on episode 59 of Baek's SBS TV reality cuisine show, Delicious Rendezvous, on January 28, 2021.",
+        "MC: none\n\nTeams: Team 1  (V, Jimin, & Jin) Team 2 (Jungkook, RM, & J-Hope)\n\nBTS divide into two teams of three and prepare dishes using k-ham (canned pork) that will be judged by South Korean chef Baek Jong-won. The winning team will receive special knives engraved with Baek's name as a prize. Team 1 cooks ham potato stew. Team 2 cooks ramen, ham and rice. Baek shows BTS how to make ham fried rice in return. At the end of the episode, Baek announces that both teams won because they both made their dishes well, and presents knives to all seven members. The episode is a collaboration between Baek and BTS to promote Korean pork. A condensed version of the special was aired on episode 59 of Baek's SBS TV reality cuisine show, Delicious Rendezvous, on January 28, 2021.",
         1,
         "https://www.youtube.com/embed/hhEmXU90pJg",
         "2021-01-19",
@@ -984,7 +984,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.126: 777 Lucky Seven (Part 1)",
-        "MC: none\n\nTeams: none\n\nThe members must complete 14 challenges in order to go home.\n\n\n\n\n\nJ-Hope and V carry out their punishment from episode 124 by wearing spangled t-shirts.",
+        "MC: none\n\nTeams: none\n\nThe members must complete 14 challenges in order to go home. J-Hope and V carry out their punishment from episode 124 by wearing spangled t-shirts.",
         1,
         "https://www.youtube.com/embed/F9iKSUVw1P4",
         "2021-01-26",
@@ -1104,7 +1104,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.141: BTS Collaboration Variety Show (Part 2)",
-        "MC: Na Young-seok\n\nTeams: none\n\nIn a collaboration between Run BTS and TV producer-director Na Young-seok's The Game Caterers, BTS members take on challenges and missions akin to the popular variety shows Na had produced. Jimin wins. In the end, the members receive gifts from Game Caterers.\n\n\n\n\n\nThis is the final episode to use On as the opening theme. The show went on a month-long hiatus after this episode in order to accommodate promotions for the band's new single at the time, Butter, followed by their eighth anniversary celebrations.",
+        "MC: Na Young-seok\n\nTeams: none\n\nIn a collaboration between Run BTS and TV producer-director Na Young-seok's The Game Caterers, BTS members take on challenges and missions akin to the popular variety shows Na had produced. Jimin wins. In the end, the members receive gifts from Game Caterers. This is the final episode to use On as the opening theme. The show went on a month-long hiatus after this episode in order to accommodate promotions for the band's new single at the time, Butter, followed by their eighth anniversary celebrations.",
         1,
         "https://www.youtube.com/embed/cvcWk2F6Mnc",
         "2021-05-11",
@@ -1112,7 +1112,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.142: Perfect Pairings",
-        "MC: Baek Jong-won\n\nTeams: Team Green Onion (J-Hope, RM & Jimin) Team Napa Cabbage (V, Jin & Jungkook)\n\nChef Baek Jong-won returns to oversee a cooking challenge. BTS divide into two groups of three and must each cook a dish using kimchi. Team Napa Cabbage makes kimchi and sujebi while Team Green Onion makes green onion kimchi and jjajang ramyeon.\n\n\n\n\n\nThis is the first episode to use Butter as the opening theme.",
+        "MC: Baek Jong-won\n\nTeams: Team Green Onion (J-Hope, RM & Jimin) Team Napa Cabbage (V, Jin & Jungkook)\n\nChef Baek Jong-won returns to oversee a cooking challenge. BTS divide into two groups of three and must each cook a dish using kimchi. Team Napa Cabbage makes kimchi and sujebi while Team Green Onion makes green onion kimchi and jjajang ramyeon. This is the first episode to use Butter as the opening theme.",
         1,
         "https://www.youtube.com/embed/tsBOAg9-Q84",
         "2021-06-15",
@@ -1136,7 +1136,7 @@ INSERT INTO Videos (name, description, platformID, link, released, thumbnailID)
     ),
     (
         "Run BTS! EP.145: BTS Village: Joseon Dynasty 1",
-        "MC: none\n\nTeams: Thieves (unknown) Citizens (unknown)\n\nBTS play a Mafia-treasure hunt hybrid game in the BTS Village, now set in the Joseon Dynasty. The members act as Joseon-era residents of the village and have to find the missing piece of the broken (in episode 121) ARMY headstone to return to 2021. They must correctly guess who among them are the Thieves trying to distract them in their search, and avoid being caught by the royal army or receive a penalty. Clues to the location of the missing piece are hidden throughout the village. Each member is additionally given an individual mission to carry out and can receive a superpower to aid their search if they successfully complete it. The game comprises two rounds. The losing team will be flogged by the winning team.\n\n\n\n\n\nEpisodes set in BTS Village make up the BTS Village universe (as explained in this episode). BTS Village: Joseon Dynasty is preceded by Season 2's Protect the BTS Village (episodes 48-49), and Season 3's Reply BTS Village (episodes 121-122).",
+        "MC: none\n\nTeams: Thieves (unknown) Citizens (unknown)\n\nBTS play a Mafia-treasure hunt hybrid game in the BTS Village, now set in the Joseon Dynasty. The members act as Joseon-era residents of the village and have to find the missing piece of the broken (in episode 121) ARMY headstone to return to 2021. They must correctly guess who among them are the Thieves trying to distract them in their search, and avoid being caught by the royal army or receive a penalty. Clues to the location of the missing piece are hidden throughout the village. Each member is additionally given an individual mission to carry out and can receive a superpower to aid their search if they successfully complete it. The game comprises two rounds. The losing team will be flogged by the winning team. Episodes set in BTS Village make up the BTS Village universe (as explained in this episode). BTS Village: Joseon Dynasty is preceded by Season 2's Protect the BTS Village (episodes 48-49), and Season 3's Reply BTS Village (episodes 121-122).",
         1,
         "https://www.youtube.com/embed/7hFupR4eGnQ",
         "2021-08-03",
