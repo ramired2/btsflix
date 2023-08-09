@@ -26,10 +26,11 @@ const Homepage = () => {
           </div>
           </a>
 
-        <div className="mag option">
+        {/* <div className="mag option">
           <div className="mags"></div>
-        </div>
+        </div> */}
       </div>
+      
       <div className="house">
         <div className="houseDetails"></div>
         <div className="houseWalls"></div>
