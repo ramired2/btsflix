@@ -59,7 +59,7 @@ app.get("/api/showsFromCategory", (req, res) => {
                     INNER JOIN Tags ON VideoTags.tagID = Tags.tagID
                     WHERE Tags.tag = ?
                     GROUP BY Videos.videoID
-                    ORDER BY Videos.name;`
+                    ORDER BY Videos.videoID;`
 
     db.query(query, [category], (err, result) => {
         if (err) throw err;
