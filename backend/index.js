@@ -244,12 +244,24 @@ app.get("/api/getAllAlbums", (req, res) => {
     const category = req.query.category;
     console.log(category)
     // console.log(req)
+    let query = ""
 
-    const query = `SELECT Albums.albumID, Albums.albumName, Albums.artistID, CONCAT(Members.lastName, " ", Members.firstName) AS fullName, Members.alias, Albums.year, Albums.link, Albums.cover
+    if (category == "All") {
+        query = `SELECT Albums.albumID, Albums.albumName, Albums.artistID, CONCAT(Members.lastName, " ", Members.firstName) AS fullName, Members.alias, Albums.year, Albums.link, Albums.cover
+                    FROM Albums
+                    INNER JOIN Members ON Albums.artistID = Members.memberID
+                    GROUP BY Albums.albumName
+                    ORDER BY Albums.year;`
+    }
+    else {
+        query = `SELECT Albums.albumID, Albums.albumName, Albums.artistID, CONCAT(Members.lastName, " ", Members.firstName) AS fullName, Members.alias, Albums.year, Albums.link, Albums.cover
                     FROM Albums
                     INNER JOIN Members ON Albums.artistID = Members.memberID
                     GROUP BY Albums.year
                     ORDER BY Albums.year;`
+    }
+
+    
 
     console.log(query)
 

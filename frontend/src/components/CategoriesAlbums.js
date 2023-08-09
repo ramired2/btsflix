@@ -8,16 +8,21 @@ function CategoriesAlbums(){
 
     useEffect(() => {
         getalbums();
+        // setalbums(albums => [...albums, "all"]);
       }, []);
 
     const getalbums = async() => {
         const res = await axios (`http://localhost:5000/api/getAllAlbums`, {
             headers: { 'Content-Type': 'application/json'},
             method: "GET",
+            params: {category: "year"}
             })
             .then(res => {
-                console.log(res.data)
-                setalbums(res.data)
+                // console.log(res.data)
+                setalbums(res.data);
+                setalbums(albums => [...albums, {year: "All"}]);
+                
+                console.log(albums)
             })
             .catch(err => console.log(err));
         };

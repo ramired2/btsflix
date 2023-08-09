@@ -7,7 +7,7 @@ const SearchAlbum = (props) => {
   const location = useLocation()
   const [params, setParams] = useState(useParams());
 
-//   const [type, setType] = useState(params.type);
+  const [type, setType] = useState(params.type);
   const [search, setSearch] = useState(params.search);
 
   const [albums, setAlbums] = useState(null);
@@ -19,47 +19,32 @@ const SearchAlbum = (props) => {
 
   useEffect(() => {
     // console.log("in useEffect")
-    // if (type == "category") {
-    //   console.log("category search")
-    //   getalbums();
-    // }
-    // else { 
-      // (type == "search")
-      // only goes here on first page here -- need to fix when user have another search
-      console.log("general search")
+    if (search == "All") {
+      console.log(search)
+      getalbums();
+    }
+    else { 
+    //   (type == "search")
+    //   only goes here on first page here -- need to fix when user have another search
+      console.log("search")
       genSearch();
-    // }
+    }
 
 
   }, []);
 
-
-//   const whichGet = () => {
-//     if (type == "category") {
-//       console.log("category search")
-//       getalbums();
-//     }
-//     else { 
-//       // (type == "search")
-//       // only goes here on first page here -- need to fix when user have another search
-//       console.log("general search")
-//       genSearch();
-//     }
-//   }
-  
-
-//   const getalbums = async() => {
-//     const res = await axios (`http://localhost:5000/api/albumsFromCategory`, {
-//         headers: { 'Content-Type': 'application/json'},
-//         method: "GET",
-//         params: {category: search}
-//         })
-//         .then(res => {
-//             console.log(res.data)
-//             setAlbums(res.data)
-//         })
-//         .catch(err => console.log(err));
-//     };
+  const getalbums = async() => {
+    const res = await axios (`http://localhost:5000/api/getAllAlbums`, {
+        headers: { 'Content-Type': 'application/json'},
+        method: "GET",
+        params: {category: "All"}
+        })
+        .then(res => {
+            console.log(res.data)
+            setAlbums(res.data)
+        })
+        .catch(err => console.log(err));
+    };
 
     const genSearch = async() => {
       const res = await axios (`http://localhost:5000/api/albumsFromMembersORYear`, {
@@ -100,7 +85,7 @@ const SearchAlbum = (props) => {
         <div className='listShows'>
           {albums? albums == ""? "No Results":
                                     albums.map ((album, idx) => 
-                                      <div className="indivShow" onClick={() => {setHover(album); window.scrollTo(0, 0);}}>
+                                      <div className="indivShow indivAlbums" onClick={() => {setHover(album); window.scrollTo(0, 0);}}>
                                         <div className='grouping'>
                                             {/* <p className='text showName'>{show.name}</p> */}
                                             <img className="thumbnail" src={`/${album.cover}`} alt="episodes thumbnail" />
