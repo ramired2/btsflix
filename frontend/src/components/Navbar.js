@@ -14,7 +14,7 @@ function Navbar(props) {
               :<div onMouseLeave={() => setShow(false)} >
                 <input type="text" class="textbox" placeholder="type here..." value={search} onChange={(e) => setSearch(e.target.value)}/>
                 {console.log(search)}
-                <a href={link}><button>Go</button></a>
+                <a href={link}><button className="btnSearch">Go</button></a>
               </div>}
 
           </div>

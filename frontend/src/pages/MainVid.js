@@ -10,9 +10,12 @@ const MainVid = () => {
         
         <div className="contentMainVid">
             <ReccsShows></ReccsShows>
+            <ListShows category={"Run BTS!"}></ListShows>
             <ListShows category={"Games"}></ListShows>
             <ListShows category={"Spy"}></ListShows>
             <ListShows category={"Scavenger Hunt"}></ListShows>
+            <ListShows category={"Teams"}></ListShows>
+            <ListShows category={"Water"}></ListShows>
         </div>
       
     </div>
