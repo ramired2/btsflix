@@ -22,9 +22,9 @@ function Navbar(props) {
   
     return (
             <div className="nav">
-              <div className="navLogo">
-                <a href='/'><img className="logo"  src="/logo.png" alt="BTSflix Logo" /></a>
-              </div>
+              <a href='/'><div className="navLogo">
+                <img className="logo"  src="/logo.png" alt="BTSflix Logo" />
+              </div></a>
   
               <div className="navLinks">
                 <ul className="nav_list">

@@ -971,3 +971,6 @@ img {
 .album {
   top: 3%;
 }
+.list {
+  list-style-type: none;
+}

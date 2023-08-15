@@ -4,11 +4,24 @@ import axios from 'axios';
 function ListAlbums({category}){
     const [Hover, setHover] = useState(false);
     const [Albums, setAlbum] = useState([]);
-    const [remainder, setRemainder] = useState([]);
+    const [albumInfo, setAlbumInfo] = useState([]);
+
+    const [show, setShow] = useState(true);
+
 
     useEffect(() => {
         getAlbums();
-        // settingRemainEps();
+        
+        if (!localStorage.getItem('modal')) {
+            localStorage.setItem("modal", show)
+          }
+        
+        // if token then person logged in -- get album info
+        if (localStorage.getItem('token') &&  localStorage.getItem('token') != undefined) {
+            console.log(`Bearer ${localStorage.getItem('token')}`)
+            getAlbumInfo()
+        }
+
       }, []);
 
       const getAlbums = async() => {
@@ -18,8 +31,25 @@ function ListAlbums({category}){
             params: {category: category}
             })
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 setAlbum(res.data)
+            })
+            .catch(err => console.log(err));
+        };
+
+    const getAlbumInfo = async() => {
+        const res = await axios.get (`https://api.spotify.com/v1/search?q=proof&type=album`, {
+            headers: {
+                        Authorization: `Bearer ${localStorage.getItem('token')}`,
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',},
+            })
+            .then(res => {
+                console.log(`Bearer ${localStorage.getItem('token')}`)
+                console.log(res.data)
+                setAlbumInfo(res.data)
+
+                //traverse thru album and albumInfo so its just in one array
             })
             .catch(err => console.log(err));
         };
@@ -39,6 +69,20 @@ function ListAlbums({category}){
         </div>
     </div>
     }
+
+    const modalSpotify = () => {
+        return <div className='modalContainer' onMouseLeave={() => setShow(false)} >
+                  <div className="infoContainer">
+                  <div className="closeBtn mainCloseBtn" onClick={() => {setShow(false); localStorage.setItem("modal", "false")}}>x</div>
+                    <p>If you login with Spotify you get access to more features like...</p>
+                    <ol className="list">
+                      <li>listening to a track from an album</li>
+                      <li>getting the full tracks of an album</li>
+                    </ol>
+                    <p>Otherwise, you just get the year and artist of the album.</p>
+                  </div>
+                </div>
+      }
     
 
     return(
@@ -56,6 +100,7 @@ function ListAlbums({category}){
                 </div>
             </div>
             {Hover != false? modal():""}
+            {show == true? localStorage.getItem('modal') != "false"? modalSpotify(): "": ""}
         </div>
     );
 }

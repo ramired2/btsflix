@@ -9,7 +9,7 @@ function ListShows({category}){
 
     useEffect(() => {
         getShows();
-        // settingRemainEps();
+        
       }, []);
 
     //   const settingRemainEps = () => {
