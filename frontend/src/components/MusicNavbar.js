@@ -2,6 +2,9 @@ import React, {useState, useEffect, Fragment} from 'react';
 import CategoriesAlbums from "../components/CategoriesAlbums.js";
 import { useParams, useLocation } from "react-router-dom";
 import queryString from 'query-string';
+import axios from 'axios';
+import { Buffer } from 'buffer';
+
 
 function MusicNavbar (props) {  
   const [Hover, setHover] = useState(false);
@@ -13,18 +16,37 @@ function MusicNavbar (props) {
 
 
   useEffect(() => {
-    console.log(queryString.parse(location.search))
+    // console.log(queryString.parse(location.search))
 
-    setToken(queryString.parse(location.search))
-
+    // setToken(queryString.parse(location.search))
+    
     if (!localStorage.getItem('token') || localStorage.getItem('token') == "undefined") {
-        localStorage.setItem("token", token['code'])
+        // console.log(process.env.REACT_APP_spotifyClient, process.env.REACT_APP_spotifySecret)
+        getToken();
+        localStorage.setItem("token", token['access_token'])
     }
 
-    // fetch("https://accounts.spotify.com/api/token", )
+    
       
     
-  }, [token['code']]);
+  }, [token['access_token']]);
+
+  const getToken = async() => {
+    var token = Buffer.from(`${process.env.REACT_APP_spotifyClient}:${process.env.REACT_APP_spotifySecret}`, 'utf-8').toString('base64')
+    const res = await axios.post (`https://accounts.spotify.com/api/token`, {grant_type: 'client_credentials'}, {
+        method: 'POST',
+        grant_type :'client_credentials',
+        headers: { 
+          'Authorization': `Basic ${token}`,
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Accept': 'application/json'},
+        })
+        .then(res => {
+            console.log(res.data)
+            setToken(res.data)
+        })
+        .catch(err => console.log(err));
+    };
   
     return (
             <div className="nav">

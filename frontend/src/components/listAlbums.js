@@ -12,13 +12,9 @@ function ListAlbums({category}){
     useEffect(() => {
         getAlbums();
         
-        if (!localStorage.getItem('modal')) {
-            localStorage.setItem("modal", show)
-          }
-        
         // if token then person logged in -- get album info
-        if (localStorage.getItem('token') &&  localStorage.getItem('token') != undefined) {
-            console.log(`Bearer ${localStorage.getItem('token')}`)
+        if (Hover != false) {
+            // console.log(`Bearer ${localStorage.getItem('token')}`)
             getAlbumInfo()
         }
 
@@ -38,7 +34,7 @@ function ListAlbums({category}){
         };
 
     const getAlbumInfo = async() => {
-        const res = await axios.get (`https://api.spotify.com/v1/search?q=proof&type=album`, {
+        const res = await axios.get (`https://api.spotify.com/v1/search?q=${Hover.albumName + " " + Hover.alias}&type=album`, {
             headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`,
                         Accept: 'application/json',
@@ -70,20 +66,6 @@ function ListAlbums({category}){
     </div>
     }
 
-    const modalSpotify = () => {
-        return <div className='modalContainer' onMouseLeave={() => setShow(false)} >
-                  <div className="infoContainer">
-                  <div className="closeBtn mainCloseBtn" onClick={() => {setShow(false); localStorage.setItem("modal", "false")}}>x</div>
-                    <p>If you login with Spotify you get access to more features like...</p>
-                    <ol className="list">
-                      <li>listening to a track from an album</li>
-                      <li>getting the full tracks of an album</li>
-                    </ol>
-                    <p>Otherwise, you just get the year and artist of the album.</p>
-                  </div>
-                </div>
-      }
-    
 
     return(
         <div className="listAlbumsBG" id="top">
@@ -92,7 +74,7 @@ function ListAlbums({category}){
             <div className="showList">
                 <div className="scrolling">
                     {Albums == null? "Loading..."
-                        : Albums.map ((album, idx) => 
+                        : Albums.map ((album, idx) =>
                         <div className="indivAlbums" onClick={() => {setHover(album); window.scrollTo(0, 0);}}>
                             {/* <p className='text showName'>{album.name}</p> */}
                             <img className="thumbnail" src={`/${album.cover}`} alt="episodes thumbnail" />
@@ -100,7 +82,6 @@ function ListAlbums({category}){
                 </div>
             </div>
             {Hover != false? modal():""}
-            {show == true? localStorage.getItem('modal') != "false"? modalSpotify(): "": ""}
         </div>
     );
 }
