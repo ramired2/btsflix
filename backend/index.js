@@ -4,10 +4,13 @@ const cors = require("cors")
 const app = express();
 const mysql = require("mysql2")
 
+require('dotenv').config()
+// console.log(process.env)
+
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "8432Befly",
+    password: process.env.db_password,
     database: "btsflix"
 });
 
@@ -127,8 +130,6 @@ app.get("/api/insertStarring/:min/:max", (req, res) => {
                 // res.send();
             });
         // })(i)
-           
-    // res.send("finished loop");
     }
 
     res.send("finished loop");
@@ -181,8 +182,6 @@ app.get("/api/generateRandVid", (req, res) => {
         if (err) throw err;
         // console.log("first query done -- set rand num")
     });
-
-    
 
     // make the query for videoID = randNumber
     const query2 = `SELECT Videos.videoID, Videos.name, Videos.description, Videos.platformID, Platforms.name as platformName, Videos.link, Thumbnails.thumbnail, GROUP_CONCAT(DISTINCT Tags.tagID ORDER BY Tags.tagID ASC) as tagID, 
@@ -271,6 +270,8 @@ app.get("/api/getAllAlbums", (req, res) => {
         res.send(result)
     })
 });
+
+// calls for spotify API
 
 
 app.listen(5000, () => {
