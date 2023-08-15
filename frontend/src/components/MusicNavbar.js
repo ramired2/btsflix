@@ -25,9 +25,6 @@ function MusicNavbar (props) {
         getToken();
         localStorage.setItem("token", token['access_token'])
     }
-
-    
-      
     
   }, [token['access_token']]);
 
