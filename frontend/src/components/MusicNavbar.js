@@ -32,21 +32,34 @@ function MusicNavbar (props) {
   }, [token['access_token']]);
 
   const getToken = async() => {
-    var token = Buffer.from(`${process.env.REACT_APP_spotifyClient}:${process.env.REACT_APP_spotifySecret}`, 'utf-8').toString('base64')
-    const res = await axios.post (`https://accounts.spotify.com/api/token`, {grant_type: 'client_credentials'}, {
-        method: 'POST',
-        grant_type :'client_credentials',
-        headers: { 
-          'Authorization': `Basic ${token}`,
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Accept': 'application/json'},
+    const res = await axios (`http://localhost:5000/api`, {
+        headers: { 'Content-Type': 'application/json'},
+        method: "GET",
         })
         .then(res => {
-            console.log(res.data)
+            // console.log(res.data)
+
             setToken(res.data)
         })
         .catch(err => console.log(err));
     };
+
+  // const getToken = async() => {
+  //   var token = Buffer.from(`${process.env.REACT_APP_spotifyClient}:${process.env.REACT_APP_spotifySecret}`, 'utf-8').toString('base64')
+  //   const res = await axios.post (`https://accounts.spotify.com/api/token`, {grant_type: 'client_credentials'}, {
+  //       method: 'POST',
+  //       grant_type :'client_credentials',
+  //       headers: { 
+  //         'Authorization': `Basic ${token}`,
+  //         'Content-Type': 'application/x-www-form-urlencoded',
+  //         'Accept': 'application/json'},
+  //       })
+  //       .then(res => {
+  //           console.log(res.data)
+  //           setToken(res.data)
+  //       })
+  //       .catch(err => console.log(err));
+  //   };
   
     return (
             <div className="nav">

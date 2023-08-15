@@ -14,23 +14,19 @@ function ListAlbums({category}){
 
     useEffect(() => {
         getAlbums();
-        mappingIt();
-        // console.log("final:")
-        // console.log(final)
+        // mappingIt();
 
-        // console.log("albumIndo:")
-        console.log(albumInfo)
-
-        // console.log("albums:")
-        // console.log(albumInfo)
-
-        if(Albums) {
-            console.log(final)
-            console.log(albumInfo)
-            setfinal(Albums.map((album, i) => ({album, "tracks":albumInfo[i][0]})))
-            console.log("final")
-            console.log(final)
-        }
+        // if(Albums) {
+        //     console.log(final)
+        //     console.log(albumInfo)
+        //     setfinal(
+        //         Albums.map((album, i) => (
+        //             {album, "tracks":[albumInfo[i]]}
+        //             ))
+        //         )
+        //     console.log("final")
+        //     console.log(final)
+        // }
 
       }, []);
 
@@ -38,7 +34,7 @@ function ListAlbums({category}){
         const res = await axios (`http://localhost:5000/api/albumsFromMembersORYear`, {
             headers: { 'Content-Type': 'application/json'},
             method: "GET",
-            params: {category: category}
+            params: {category: category, token: localStorage.getItem('token')}
             })
             .then(res => {
                 // console.log(res.data)
@@ -48,30 +44,32 @@ function ListAlbums({category}){
             .catch(err => console.log(err));
         };
 
-    const getAlbumInfo = async(link, index) => {
-        const res = await axios.get (`https://api.spotify.com/v1/albums/${link}/tracks`, {
-            headers: {
-                        Authorization: `Bearer ${localStorage.getItem('token')}`,
-                        Accept: 'application/json',
-                        'Content-Type': 'application/json',},
-            })
-            .then(res => {
-                // console.log(`Bearer ${localStorage.getItem('token')}`)
-                // albums => [...albums, {year: "All"}]
-                // console.log(res.data["items"])
-                // ["items"]
-                setAlbumInfo(albumInfo => [...albumInfo, {tracks:res.data["items"]}])
+    // const getAlbumInfo = async(link, index) => {
+    //     const res = await axios.get (`https://api.spotify.com/v1/albums/${link}/tracks`, {
+    //         headers: {
+    //                     Authorization: `Bearer ${localStorage.getItem('token')}`,
+    //                     Accept: 'application/json',
+    //                     'Content-Type': 'application/json',},
+    //         })
+    //         .then(res => {
+    //             setAlbumInfo(albumInfo => [...albumInfo, [res.data["items"]]])
+    //             console.log(albumInfo)
+    //             // console.log("api call")
 
-            })
-            .catch(err => console.log(err));
-        };
+    //         })
+    //         .catch(err => console.log(err));
+    //     };
 
-        const mappingIt = () => {
-            Albums.map ((album, idx) =>
-                getAlbumInfo(album.link, idx))
-        }
+    //     const mappingIt = () => {
+    //         Albums.map ((album, idx) =>
+    //             getAlbumInfo(album.link, idx))
+
+    //         console.log("got album info")
+    //     }
 
     const modal = () => {
+        console.log(Hover)
+        console.log(Hover["tracks"])
         return <div className="modalContainer" >
         <div className="infoContainer">
         <div className="closeBtn mainCloseBtn" onClick={() => setHover(false)}>x</div>
@@ -83,12 +81,14 @@ function ListAlbums({category}){
                     <li>Year: {Hover.year}</li>
                 </ol>
 
-                <h4>Tracks</h4>
-                {albumInfo != []? 
+                {/* {final["tracks"] != undefined? 
+                <div><h4 className="infoList details albumDetails">Tracks</h4>
+                
                 <ol>
-                    {/* {albumInfo["items"].map((track, index) => <li>{albumInfo}</li>)} */}
+                    {Hover["tracks"]["tracks"].map((track, index) => <li>{albumInfo}</li>)}
                 </ol>
-                : "Loading..."}
+                </div>
+                : ""} */}
             </div>
         </div>
     </div>
@@ -101,7 +101,7 @@ function ListAlbums({category}){
 
             <div className="showList">
                 <div className="scrolling">
-                    {Albums == null? "Loading..."
+                    {Albums == []? "Loading..."
                         : Albums.map ((album, idx) =>
                         <div className="indivAlbums" onClick={() => {setHover(album); window.scrollTo(0, 0);}}>
                             {/* <p className='text showName'>{album.name}</p> */}

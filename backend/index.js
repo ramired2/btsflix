@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors")
 const app = express();
 const mysql = require("mysql2")
+const axios = require("axios")
 
 require('dotenv').config()
 // console.log(process.env)
@@ -231,16 +232,40 @@ app.get("/api/albumsFromMembersORYear", (req, res) => {
 
 app.get("/api/getAlbums", (req, res) => {
     const query = `SELECT * FROM Albums;`
+    const token = req.query.token;
+    var info
 
     db.query(query, (err, result) => {
         if (err) throw err;
         // console.log(result);
+
+    //     axios.post (`https://api.spotify.com/v1/albums/${link}/tracks`, {
+    //         headers: {
+    //                     Authorization: `Bearer ${token}`,
+    //                     Accept: 'application/json',
+    //                     'Content-Type': 'application/json',},
+    //         })
+    //         .then(res => {
+    //             // setAlbumInfo(albumInfo => [...albumInfo, [res.data["items"]]])
+    //             info = res.data["items"]
+
+    //             console.log(info)
+    //             // console.log("api call")
+
+    //         })
+    //         .catch(err => console.log(err));
         res.send(result)
     });
+
+    // get the tracks per album
+    
+
+            //fir loop albums and add tracks before send 
 });
 
 app.get("/api/getAllAlbums", (req, res) => {
     const category = req.query.category;
+
     console.log(category)
     // console.log(req)
     let query = ""
@@ -272,6 +297,25 @@ app.get("/api/getAllAlbums", (req, res) => {
 });
 
 // calls for spotify API
+// maybe api call for all albums and then jsut insert to DB
+app.get ("/api", (req, res) => {
+    
+        var token = Buffer.from(`${process.env.spotifyClient}:${process.env.spotifySecret}`, 'utf-8').toString('base64')
+        axios.post (`https://accounts.spotify.com/api/token`, {grant_type: 'client_credentials'}, {
+            method: 'POST',
+            grant_type :'client_credentials',
+            headers: { 
+              'Authorization': `Basic ${token}`,
+              'Content-Type': 'application/x-www-form-urlencoded',
+              'Accept': 'application/json'},
+            })
+            .then(result => {
+                console.log(result.data)
+                res.send(result.data)
+                
+            })
+            .catch(err => console.log(err));
+});
 
 
 app.listen(5000, () => {
