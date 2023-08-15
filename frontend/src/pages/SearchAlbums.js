@@ -64,7 +64,7 @@ const SearchAlbum = (props) => {
         <div className="infoContainer">
         <div className="closeBtn mainCloseBtn" onClick={() => setHover(false)}>x</div>
             <h1 className="videoName">{Hover.albumName}</h1>
-            <a href= {Hover.link} ><img width="300" height="300" className="video" src={`/${Hover.cover}`}></img></a>
+            <a href= {"https://open.spotify.com/album/" + Hover.link} ><img width="300" height="300" className="video" src={`/${Hover.cover}`}></img></a>
             <div className="contentInfo modalContentInfo">
                 <ol className="infoList details albumDetails">
                     <li className="indivItem">Artist: {Hover.alias + " (" + Hover.fullName + ")"}</li>
