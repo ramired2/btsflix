@@ -100,10 +100,10 @@ VALUES	("김남준" , "Kim", "Namjoon", "RM"),
         
         
 INSERT INTO Albums (albumName, artistID, cover, link, year)
-VALUES	("Mono.", 1, "mono.png", "https://open.spotify.com/album/1vsTrL1h2bRHP1kUPvlIyb", 2018),
-		("D-2", 3, "d2.jpg", "https://open.spotify.com/album/7lhFsAaVCFaYbkNvBMw5Zf?si=2d228857805546f5", 2020),
-        ("Map of the Soul Persona", 8, "persona.png", "https://open.spotify.com/album/2KqlAl1Kl5fZvbFgJ0qFB6?highlight=spotify:track:2GXWzWPsYlTZcvVW8JIu69", 2019),
-        ("Jack in the Box", 4, "jackinthebox.png", "https://open.spotify.com/album/0FrC9lzgVhziJenigsrXdl?si=42711c8878294be4", 2022);
+VALUES	("Mono.", 1, "mono.png", "1vsTrL1h2bRHP1kUPvlIyb", 2018),
+		("D-2", 3, "d2.jpg", "7lhFsAaVCFaYbkNvBMw5Zf?si=f5af0d8e5052467e", 2020),
+        ("Map of the Soul Persona", 8, "persona.png", "2KqlAl1Kl5fZvbFgJ0qFB6", 2019),
+        ("Jack in the Box", 4, "jackinthebox.png", "0FrC9lzgVhziJenigsrXdl", 2022);
         
 INSERT INTO Platforms (name, numVideos)
 VALUES	("Youtube", 3),
