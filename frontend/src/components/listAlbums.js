@@ -19,15 +19,17 @@ function ListAlbums({category}){
         // console.log(final)
 
         // console.log("albumIndo:")
-        // console.log(albumInfo)
+        console.log(albumInfo)
 
         // console.log("albums:")
         // console.log(albumInfo)
 
         if(Albums) {
-            setfinal(Albums.map((album, i) => ({album, "tracks":albumInfo[i]})))
             console.log(final)
             console.log(albumInfo)
+            setfinal(Albums.map((album, i) => ({album, "tracks":albumInfo[i][0]})))
+            console.log("final")
+            console.log(final)
         }
 
       }, []);
@@ -56,7 +58,7 @@ function ListAlbums({category}){
             .then(res => {
                 // console.log(`Bearer ${localStorage.getItem('token')}`)
                 // albums => [...albums, {year: "All"}]
-                console.log(res.data["items"])
+                // console.log(res.data["items"])
                 // ["items"]
                 setAlbumInfo(albumInfo => [...albumInfo, {tracks:res.data["items"]}])
 
